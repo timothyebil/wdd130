@@ -1,0 +1,62 @@
+/* Styles for the main content container */
+/*
+  The following CSS styles implement the requirements of the W02 assignment.
+  Ensure you have completed the week's learning activities before applying these styles.
+*/
+
+/* Limit the width of the main element */
+main {
+    max-width: 840px;
+}
+/* Ensure you use proper values for colors/etc. in a real project */
+
+nav {
+    background-color: #333; /* Example value */
+    padding: 10px;          /* Example value */
+}
+
+nav a {
+    color: white;           /* Example value */
+    padding: 10px 15px;     /* Example value */
+    display: block;
+}
+
+main {
+    max-width: 800px;       /* Example value */
+}
+
+h1 {
+    color: #0056b3;         /* Example value */
+}
+
+main img {
+    width: 200px;
+    height: auto;           /* Or a specific value like 300px */
+    border: 2px solid #ccc; /* Example value */
+    padding: 5px;           /* Example value */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Example value */
+}
+
+aside {
+    width: 300px;           /* Example value */
+    margin: 20px;           /* Example value */
+    border: 1px solid #ddd; /* Example value */
+    padding: 15px;          /* Example value */
+    background-color: #f4f4f4; /* Example value */
+    color: #333;            /* Example value */
+}
+
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+p {
+    padding: 0;
+}
+
+footer {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}

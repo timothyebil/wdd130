@@ -25,96 +25,55 @@ header, footer {
 main {
     max-width: 840px;
 }
-
+/* Ensure you use proper values for colors/etc. in a real project */
 
 nav {
-    color: steelblue;
-
+    background-color: #333; /* Example value */
+    padding: 10px;          /* Example value */
 }
 
-/* Styles for the new aside element */
+nav a {
+    color: white;           /* Example value */
+    padding: 10px 15px;     /* Example value */
+    display: block;
+}
+
+main {
+    max-width: 800px;       /* Example value */
+}
+
+h1 {
+    color: #0056b3;         /* Example value */
+}
+
+main img {
+    width: 200px;
+    height: auto;           /* Or a specific value like 300px */
+    border: 2px solid #ccc; /* Example value */
+    padding: 5px;           /* Example value */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Example value */
+}
+
 aside {
-    width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0 / 0.2); /* Subtle, transparent border effect */
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
-    text-align: center;
+    width: 300px;           /* Example value */
+    margin: 20px;           /* Example value */
+    border: 1px solid #ddd; /* Example value */
+    padding: 15px;          /* Example value */
+    background-color: #f4f4f4; /* Example value */
+    color: #333;            /* Example value */
 }
 
-/* Set width and auto height for images inside the aside to maintain aspect ratio */
 aside img {
     width: 200px;
     height: auto;
 }
 
-/* Styles for headings */
-h1{
-    color: steelblue;
-
-}
-
-h2 {
-    border-bottom: 1px solid #222;
-    color: #007bff;
-}
-
-/* Change the specific style for the profile image inside the main element */
-main img {
-    width: 150px;
-    height: auto;
-    border: 1px solid steelblue; /* Add a steelblue border around the profile image */
-    padding: 2px; /* Add padding to create space between the image and the border */
-    box-shadow: 0 0 30px gray; /* Add a gray shadow around the profile image for a subtle glowing effect */
-    /* Add any other styles like margin, border, etc. here if needed */
-}
-
-/* Styles for the sections (About and Visiting Info) */
-section {
-    margin-bottom: 1.5rem;
-    border: 1px solid rgb(0 0 0 / 10%);
-    padding: 10px;
-    background-color: #abe;
-    font-size: 0.9rem;
-}
-
-section p {
-    margin: 10px;    
-}
-
-/* Styles for the list within the Visiting Info section */
-ul {
-    margin: 10px 20px;
-}
-
-li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-    /* You might use a custom bullet point or icon here if your screenshot shows one */
-}
-
-/* Styles for links */
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    background-color: #abe;
-}
-
-/* Change the paragraph padding property value to 0 pixels */
 p {
     padding: 0;
 }
 
-/* Apply CSS to the footer element for separation, distinction, and text alignment */
 footer {
-    margin-top: 15px; /* 1. Add top margin to separate it from main content */
-    border-top: 1px solid #000; /* 2. Add top border for distinction */
-    text-align: center; /* 3. Align text to the center */
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    text-align: center;
 }
-

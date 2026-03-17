@@ -1,60 +1,56 @@
-/* --- Corrected CSS Styles --- */
+/* Styles for the main content container */
+/*
+  The following CSS styles implement the requirements of the W02 assignment.
+  Ensure you have completed the week's learning activities before applying these styles.
+*/
 
 /* Limit the width of the main element */
 main {
     max-width: 840px;
 }
+/* Ensure you use proper values for colors/etc. in a real project */
 
-/* Nav rules with background-color and padding */
 nav {
-    background-color: #333;
-    padding: 10px;
+    background-color: #333; /* Example value */
+    padding: 10px;          /* Example value */
 }
 
-/* Nav link rules with color, padding, and display: block; */
 nav a {
-    color: white;
-    padding: 10px 15px;
+    color: white;           /* Example value */
+    padding: 10px 15px;     /* Example value */
     display: block;
-    text-decoration: none; /* Recommended */
 }
 
-/* Header color declaration */
 h1 {
-    color: #0056b3;
+    color: #0056b3;         /* Example value */
 }
 
-/* Main image rules: width, height, border, padding, and box-shadow */
 main img {
     width: 200px;
-    height: auto;
-    border: 2px solid #ccc;
-    padding: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    height: auto;           /* Or a specific value like 300px */
+    border: 2px solid #ccc; /* Example value */
+    padding: 5px;           /* Example value */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Example value */
 }
 
-/* Aside rules: width, margin, border, padding, background-color, and color */
 aside {
-    width: 300px;
-    margin: 20px;
-    border: 1px solid #ddd;
-    padding: 15px;
-    background-color: #f4f4f4;
-    color: #333;
+    width: 300px;           /* Example value */
+    margin: 20px;           /* Example value */
+    border: 1px solid #ddd; /* Example value */
+    padding: 15px;          /* Example value */
+    background-color: #f4f4f4; /* Example value */
+    color: #333;            /* Example value */
 }
 
-/* Aside image rules: width: 200px and height: auto */
 aside img {
     width: 200px;
     height: auto;
 }
 
-/* Paragraph rule with padding: 0; */
 p {
     padding: 0;
 }
 
-/* Footer rule (minimal required) */
 footer {
     margin-top: 20px;
     border-top: 1px solid #ccc;

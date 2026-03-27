@@ -115,3 +115,11 @@ footer {
   padding: 2rem 1rem;
   margin-top: 40px;
 }
+
+.social img {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+  vertical-align: middle;
+  filter: invert(1);
+}

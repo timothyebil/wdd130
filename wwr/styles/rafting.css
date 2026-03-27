@@ -1,21 +1,30 @@
-/* General Styles */
-* {
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+/* --- 1. CSS Variables (:root) --- */
+:root {
+    --primary-color: #004a99;
+    --secondary-color: #ffcc00;
+    --text-color: #333;
+    --bg-light: #eee;
+    --white: white;
+}
+
+/* --- 2. Universal Selector Reset --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modernized font stack */
-    margin: 0;
-    padding: 0;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Header & Nav */
+/* --- Header & Nav --- */
 header {
-    background-color: #004a99; /* Deep blue for water */
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 1rem 0;
 }
 
@@ -26,11 +35,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrapping on small screens */
+    flex-wrap: wrap;
 }
 
 header nav a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
@@ -38,25 +47,21 @@ header nav a {
     font-size: 0.9rem;
 }
 
-header nav a:hover {
+header nav a:hover, header nav a.active {
     text-decoration: underline;
-}
-
-header nav a.active {
-    text-decoration: underline;
-    color: #ffcc00; /* Highlight color for active page */
+    color: var(--secondary-color);
 }
 
 .logo img {
-    max-height: 60px; /* Slightly larger logo */
+    max-height: 60px;
     display: block;
 }
 
-/* Hero Section */
+/* --- Hero Section (Fixed) --- */
 .hero {
-    position: relative;
+    position: relative; /* REQUIRED */
     text-align: center;
-    color: white;
+    color: var(--white);
 }
 
 .hero img {
@@ -67,43 +72,42 @@ header nav a.active {
     display: block;
 }
 
-.hero h1 {
-    position: absolute;
+/* Positioned on top of img */
+.hero article {
+    position: absolute; /* REQUIRED */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0,0,0,0.6); /* Slightly darker for readability */
+    background-color: rgba(0,0,0,0.6);
     padding: 15px 30px;
     border-radius: 5px;
+}
+
+.hero h1 {
     margin: 0;
     font-size: 2.5rem;
 }
 
-/* Main Content Padding */
+/* --- Main Content --- */
 main {
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Sections */
 h2 {
-    color: #004a99;
-    border-bottom: 2px solid #eee;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-light);
     padding-bottom: 10px;
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
     background-color: #333;
-    color: white;
+    color: var(--white);
     text-align: center;
     padding: 2rem 1rem;
     margin-top: 40px;
-}
-
-.social {
-    margin-top: 10px;
 }
 
 .social img {
@@ -111,5 +115,5 @@ footer {
     height: 24px;
     margin: 0 10px;
     vertical-align: middle;
-    filter: invert(1); /* Makes icons white if they are black */
+    filter: invert(1);
 }

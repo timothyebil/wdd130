@@ -5,6 +5,7 @@
     --accent1-color: #264653; /* Dark Blue-Green */
     --accent2-color: #ffffff; /* White for text on dark */
     --bg-color: #f4f4f4;
+    --text-color: #333;
     --heading-font: "Georgia", serif;
     --body-font: "Helvetica Neue", Arial, sans-serif;
 }
@@ -18,25 +19,29 @@
 
 body {
     font-family: var(--body-font);
-    color: #333;
+    color: var(--text-color); /* Use variable */
     line-height: 1.7;
-    background-color: #fff;
+    background-color: var(--accent2-color); /* Changed from #fff for consistency */
 }
 
-h1, h2 {
+h1, h2, h3 { /* Added h3 for potential future use */
     font-family: var(--heading-font);
     color: var(--primary-color);
     margin-bottom: 15px;
 }
 
+p {
+    margin-bottom: 15px; /* Ensure paragraphs have consistent spacing */
+}
+
 /* --- Container for Page Content --- */
 .content-wrapper {
-    max-width: 900px;
+    max-width: 1000px; /* Slightly wider max-width for modern screens */
     margin: 0 auto;
     padding: 20px;
 }
 
-/* --- Header & Nav (IMPROVED) --- */
+/* --- Header & Nav --- */
 header {
     background-color: var(--primary-color);
     color: var(--accent2-color);
@@ -44,7 +49,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Slightly stronger shadow */
 }
 
 .header-container {
@@ -56,7 +61,7 @@ header {
     padding: 0 20px;
 }
 
-.logo img {
+.logo-link img { /* Target the image within the new anchor tag */
     height: 50px;
     width: auto;
 }
@@ -68,25 +73,27 @@ nav a {
     font-weight: bold;
     transition: all 0.3s ease;
     border-radius: 4px;
+    margin: 0 5px; /* Added slight margin between links */
 }
 
 nav a:hover, nav a.active {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: var(--accent1-color); /* Improved color contrast on hover */
 }
 
-/* --- Hero Section (FIXED) --- */
+/* --- Hero Section --- */
 .hero {
     position: relative;
     width: 100%;
-    height: 300px; /* Set a fixed height */
+    height: 400px; /* Increased height for visual impact */
     overflow: hidden;
 }
 
 .hero img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers area nicely */
+    object-fit: cover;
+    object-position: center; /* Ensures image is centered nicely */
 }
 
 .hero-content {
@@ -98,54 +105,85 @@ nav a:hover, nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(38, 70, 83, 0.5); /* Overlay */
+    background-color: rgba(38, 70, 83, 0.6); /* Slightly darker overlay for contrast */
 }
 
 .hero-content h1 {
-    color: #fff;
-    font-size: 3rem;
-    background-color: rgba(5, 90, 5, 0.7);
-    padding: 10px 30px;
-    border-radius: 5px;
+    color: var(--accent2-color);
+    font-size: 3.5rem; /* Slightly larger font size */
+    background-color: rgba(5, 90, 5, 0.85); /* Darker green background for H1 */
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow for depth */
 }
 
-/* --- Main Content Sections (IMPROVED) --- */
+/* --- Main Content Sections --- */
 section {
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* More spacing between sections */
 }
 
-.mission, .history, .adventure {
+.mission, .history, .adventure, .why-choose-us { /* Applied styles to all main sections */
     background-color: var(--bg-color);
-    padding: 25px;
+    padding: 30px; /* Increased padding */
     border-radius: 8px;
     border-left: 5px solid var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Added subtle shadow to cards */
 }
 
-/* --- Footer (IMPROVED) --- */
+.why-choose-us ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.why-choose-us li {
+    margin-bottom: 10px;
+}
+
+/* Optional: Use CSS Grid for layout on larger screens */
+@media (min-width: 768px) {
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for sections */
+        gap: 30px; /* Spacing between grid items */
+    }
+
+    .mission, .history, .why-choose-us, .adventure {
+        /* Default span 1 column */
+        grid-column: span 1; 
+    }
+
+    /* Make the mission statement span both columns */
+    .mission {
+        grid-column: 1 / -1; 
+    }
+}
+
+/* --- Footer --- */
 footer {
     background-color: var(--primary-color);
     color: var(--accent2-color);
     padding: 30px 20px;
-    margin-top: 40px;
+    margin-top: 60px; /* More space above footer */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px; /* Increased gap */
     text-align: center;
 }
 
 .socialmedia {
     display: flex;
-    gap: 20px;
+    gap: 25px; /* Increased gap for social icons */
 }
 
 .socialmedia a img {
-    height: 30px;
-    width: 30px;
-    filter: invert(1); /* Makes icons white */
-    transition: transform 0.3s ease;
+    height: 35px; /* Slightly larger icons */
+    width: 35px;
+    filter: invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease; /* Added filter to transition */
 }
 
 .socialmedia a img:hover {
-    transform: scale(1.1); /* Subtle hover effect */
+    transform: scale(1.2); /* More prominent hover effect */
+    filter: invert(0) sepia(1) saturate(20) hue-rotate(175deg); /* Changes icon color on hover (example effect) */
 }

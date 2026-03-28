@@ -1,16 +1,17 @@
-/* --- 1. CSS Variables (:root) --- */
+/* --- Global Styles & Reset --- */
 :root {
-    --primary-color: #055a05; /* Dark Green */
-    --secondary-color: #f4a261; /* Orange Accent */
-    --accent1-color: #264653; /* Dark Blue-Green */
-    --accent2-color: #ffffff; /* White for text on dark */
-    --bg-color: #f4f4f4;
-    --text-color: #333;
-    --heading-font: "Georgia", serif;
-    --body-font: "Helvetica Neue", Arial, sans-serif;
+    --primary-color: #004d40; /* Dark Teal */
+    --secondary-color: #ff6f00; /* Vibrant Orange */
+    --accent1-color: #ffecb3; /* Light Cream/Beige */
+    --accent2-color: #4db6ac; /* Medium Teal/Aqua */
+    --heading-font: 'Georgia', serif;
+    --paragraph-font: 'Arial', sans-serif;
+    --nav-background-color: var(--primary-color);
+    --nav-link-color: white;
+    --nav-hover-link-color: var(--accent1-color);
+    --nav-hover-background-color: var(--accent2-color);
 }
 
-/* --- Reset & Base Styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -18,38 +19,23 @@
 }
 
 body {
-    font-family: var(--body-font);
-    color: var(--text-color); /* Use variable */
-    line-height: 1.7;
-    background-color: var(--accent2-color); /* Changed from #fff for consistency */
+    font-family: var(--paragraph-font);
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--accent1-color);
 }
 
-h1, h2, h3 { /* Added h3 for potential future use */
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 0.5em;
 }
 
-p {
-    margin-bottom: 15px; /* Ensure paragraphs have consistent spacing */
-}
-
-/* --- Container for Page Content --- */
-.content-wrapper {
-    max-width: 1000px; /* Slightly wider max-width for modern screens */
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* --- Header & Nav --- */
+/* --- Header & Navigation --- */
 header {
-    background-color: var(--primary-color);
-    color: var(--accent2-color);
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Slightly stronger shadow */
+    background-color: var(--nav-background-color);
+    padding: 1rem 5%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -58,42 +44,50 @@ header {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-.logo-link img { /* Target the image within the new anchor tag */
-    height: 50px;
-    width: auto;
+.logo-link img {
+    width: 80px; /* Adjust logo size */
+    height: auto;
+    border-radius: 50%;
 }
 
 nav a {
-    color: var(--accent2-color);
+    color: var(--nav-link-color);
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 0.5rem 1rem;
     font-weight: bold;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    margin: 0 5px; /* Added slight margin between links */
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
 }
 
 nav a:hover, nav a.active {
-    background-color: var(--secondary-color);
-    color: var(--accent1-color); /* Improved color contrast on hover */
+    color: var(--nav-hover-link-color);
+    background-color: var(--nav-hover-background-color);
+}
+
+/* --- Main Content Layout --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 /* --- Hero Section --- */
 .hero {
     position: relative;
-    width: 100%;
-    height: 400px; /* Increased height for visual impact */
+    margin-bottom: 2rem;
     overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
     object-fit: cover;
-    object-position: center; /* Ensures image is centered nicely */
+    max-height: 500px;
 }
 
 .hero-content {
@@ -105,85 +99,101 @@ nav a:hover, nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(38, 70, 83, 0.6); /* Slightly darker overlay for contrast */
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
 }
 
 .hero-content h1 {
-    color: var(--accent2-color);
-    font-size: 3.5rem; /* Slightly larger font size */
-    background-color: rgba(5, 90, 5, 0.85); /* Darker green background for H1 */
-    padding: 15px 40px;
-    border-radius: 8px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow for depth */
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* --- Main Content Sections --- */
+/* --- Article & Sections --- */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply consistent styling to sections */
 section {
-    margin-bottom: 40px; /* More spacing between sections */
+    padding: 1rem;
+    border-bottom: 1px solid var(--accent2-color);
 }
 
-.mission, .history, .adventure, .why-choose-us { /* Applied styles to all main sections */
-    background-color: var(--bg-color);
-    padding: 30px; /* Increased padding */
-    border-radius: 8px;
+section:last-child {
+    border-bottom: none;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75em;
     border-left: 5px solid var(--secondary-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Added subtle shadow to cards */
+    padding-left: 10px;
 }
 
-.why-choose-us ul {
-    margin-left: 20px;
+p {
+    margin-bottom: 1em;
+}
+
+ul {
     list-style-type: disc;
+    margin-left: 20px;
 }
 
-.why-choose-us li {
-    margin-bottom: 10px;
+ul li {
+    margin-bottom: 0.5em;
 }
 
-/* Optional: Use CSS Grid for layout on larger screens */
-@media (min-width: 768px) {
-    .content-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two columns for sections */
-        gap: 30px; /* Spacing between grid items */
-    }
-
-    .mission, .history, .why-choose-us, .adventure {
-        /* Default span 1 column */
-        grid-column: span 1; 
-    }
-
-    /* Make the mission statement span both columns */
-    .mission {
-        grid-column: 1 / -1; 
-    }
+/* Specific section enhancements (Optional but nice) */
+.why-choose-us {
+    background-color: var(--accent1-color);
+    border-radius: 5px;
 }
 
 /* --- Footer --- */
 footer {
     background-color: var(--primary-color);
-    color: var(--accent2-color);
-    padding: 30px 20px;
-    margin-top: 60px; /* More space above footer */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Increased gap */
+    color: white;
+    padding: 1.5rem 5%;
     text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px 8px 0 0;
 }
 
-.socialmedia {
-    display: flex;
-    gap: 25px; /* Increased gap for social icons */
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 .socialmedia a img {
-    height: 35px; /* Slightly larger icons */
-    width: 35px;
-    filter: invert(1);
-    transition: transform 0.3s ease, filter 0.3s ease; /* Added filter to transition */
+    width: 30px;
+    margin-left: 10px;
+    transition: transform 0.3s;
 }
 
 .socialmedia a img:hover {
-    transform: scale(1.2); /* More prominent hover effect */
-    filter: invert(0) sepia(1) saturate(20) hue-rotate(175deg); /* Changes icon color on hover (example effect) */
+    transform: scale(1.1);
+}
+
+/* --- Responsive Design (Mobile First) --- */
+@media screen and (min-width: 768px) {
+    .content-wrapper {
+        /* On larger screens, use a two-column layout for main sections */
+        grid-template-columns: 1fr 1fr;
+    }
+    .mission, .adventure {
+        /* Span these sections across both columns */
+        grid-column: span 2;
+    }
 }

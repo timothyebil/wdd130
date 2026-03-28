@@ -15,7 +15,7 @@
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <!-- Added anchor tag around logo for navigation -->
-                <img src="images/logo.jpg" alt="Dry Oar Rafting Logo - Go to Home Page">
+                <img src="images/logo.jpg" alt="Dry Oar Rafting Home Logo">
             </a>
             <nav>
                 <a href="index.html">Home</a>
@@ -28,13 +28,15 @@
     <!-- Main Content -->
     <main>
         <div class="hero">
-            <!-- Added alt attribute to the main hero image -->
-            <img src="images/hero-about.jpg" alt="Rafters navigating white water rapids on a sunny day">
+            <figure>
+                <!-- Semantic structure: Using figure for image + context -->
+                <img src="images/hero-about.jpg" alt="Rafters navigating white water rapids">
+            </figure>
             <div class="hero-content">
                 <h1>About Us</h1>
             </div>
         </div>
-        <article class="content-wrapper">
+        <div class="content-wrapper">
             <section class="mission">
                 <h2>Our Mission</h2>
                 <p>At Dry Oar Rafting, our mission is to deliver safe, exhilarating, and unforgettable whitewater adventures. We believe in connecting people with the raw beauty of nature while promoting river stewardship and ensuring the highest safety standards for all adventurers.</p>
@@ -60,24 +62,18 @@
                 <h2>Adventure Awaits You!</h2>
                 <p>Whether you are a beginner looking for a scenic float or an adrenaline junkie seeking Class IV rapids, Dry Oar Rafting has the perfect trip for you. Explore our popular journeys along the scenic Canyon River and the thrilling Rapids of Fortune.</p>
             </section>
-        </article>
+        </div>
     </main>
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Dry Oar Rafting | Timothy Ebil</p>
         <nav class="socialmedia" aria-label="Social Media Links">
-            <!-- Added aria-label for accessibility -->
+            <!-- Added alt text to images for accessibility -->
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <!-- Added noreferrer -->
-                <img src="images/facebook.png" alt="Visit us on Facebook">
+                <img src="images/facebook.png" alt="Facebook icon">
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <!-- Added noreferrer -->
-                <img src="images/twitter.png" alt="Visit us on Twitter/X">
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <!-- Added noreferrer -->
-                <img src="images/instagram.png" alt="Visit us on Instagram">
+                <img src="images/twitter.png" alt="Twitter icon">
             </a>
         </nav>
     </footer>

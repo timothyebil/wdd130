@@ -47,15 +47,12 @@
     </div>
 
 <footer>
-    <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Uganda</p>
-    <p id="lastModified"></p> <!-- Add this line -->
+    <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Uganda | Last Modified: <span id="lastModified"></span></p>
 </footer>
 
-    <script>
-        // Set current year
-        document.getElementById("currentyear").textContent = new Date().getFullYear();
-        // Set last modified date
-        document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
-    </script>
-</body>
-</html>
+<script>
+    // Set current year
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    // Set last modified date
+    document.getElementById("lastModified").textContent = document.lastModified;
+</script>

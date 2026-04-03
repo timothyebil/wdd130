@@ -6,6 +6,7 @@
     <title>Timothy Ebil | WDD 130 Home Page</title>
     <meta name="description" content="Timothy Ebil's WDD 130 home page featuring web design assignments and information about Oyam District, Uganda.">
     <meta name="author" content="Timothy Ebil">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,11 +19,14 @@
             <a href="wwr/">Rafting Website</a>
         </nav>
     </header>
+
     <div class="main-layout">
         <main>
             <h1>Timothy Ebil | WDD 130</h1>
-            <img src="images/profile.jpg" alt="Portrait of Timothy Ebil" width="200" class="profile-img">
+            <!-- Added height for performance -->
+            <img src="images/profile.jpg" alt="Portrait of Timothy Ebil" width="200" height="225" class="profile-img">
             <p>Hello! I am from Oyam District, Northern Uganda. I enjoy building houses and traveling. I am currently studying Web Design and Development at BYU-Pathway.</p>
+            
             <h3>Favorite Temples</h3>
             <ul class="box">
                 <li><a href="https://www.churchofjesuschrist.org/temples/details/philadelphia-pennsylvania-temple" target="_blank" rel="noopener">Philadelphia Pennsylvania</a></li>
@@ -30,20 +34,27 @@
                 <li><a href="https://www.churchofjesuschrist.org/temples/details/lima-peru-los-olivos-temple" target="_blank" rel="noopener">Lima Peru</a></li>
             </ul>
         </main>
+
         <aside>
             <h2>Oyam District, Uganda</h2>
             <figure>
-                <img src="images/northern_uganda_01.jpg" alt="Savanna landscape in Oyam District" width="400" class="landscape-img">
+                <!-- Added height for performance -->
+                <img src="images/northern_uganda_01.jpg" alt="Savanna landscape in Oyam District" width="400" height="225" class="landscape-img">
                 <figcaption>The beautiful savanna of Northern Uganda.</figcaption>
             </figure>
             <p>Oyam District is located in Northern Uganda, bordering Murchison Falls National Park. It is known for its savanna landscapes and agricultural heritage.</p>
         </aside>
     </div>
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Uganda | <span id="lastModified"></span></p>
+        <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Uganda</p>
+        <p id="lastModified"></p>
     </footer>
+
     <script>
+        // Set current year
         document.getElementById("currentyear").textContent = new Date().getFullYear();
+        // Set last modified date
         document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
     </script>
 </body>

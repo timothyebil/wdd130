@@ -1,11 +1,11 @@
 /* 1. Root Variables - High Contrast Professional Palette */
 :root {
-  --primary-color: #004e64;    /* Deep Water Blue */
-  --secondary-color: #25a18e;  /* Teal Accent */
-  --accent1-color: #333333;    /* Dark Charcoal for Text */
-  --accent2-color: #ffffff;    /* Pure White */
+  --primary-color: #004e64; /* Deep Water Blue */
+  --accent1-color: #333333; /* Dark Charcoal for Text */
+  --accent2-color: #ffffff; /* Pure White */
   --heading-font: "Rockwell", "serif";
   --body-font: "Open Sans", Helvetica, sans-serif;
+  /* --secondary-color removed as it was unused */
 }
 
 /* 2. Global Reset */
@@ -64,7 +64,7 @@ nav, p, section, article {
   position: absolute;
   top: 20px;
   width: 100%;
-  background-color: var(--accent1-color); 
+  background-color: var(--accent1-color);
   color: #fff; /* White text for contrast */
   padding: 16px;
   text-align: center;

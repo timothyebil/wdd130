@@ -1,34 +1,101 @@
-/* Core Layout */
+/* 1. Root Variables - High Contrast Professional Palette */
+:root {
+  --primary-color: #004e64;    /* Deep Water Blue */
+  --secondary-color: #25a18e;  /* Teal Accent */
+  --accent1-color: #333333;    /* Dark Charcoal for Text */
+  --accent2-color: #ffffff;    /* Pure White */
+  --heading-font: "Rockwell", "serif";
+  --body-font: "Open Sans", Helvetica, sans-serif;
+}
+
+/* 2. Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. Body Styling */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
+  font-family: var(--body-font);
+  color: var(--accent1-color);
+  line-height: 1.6; /* Improves readability */
+  background-color: #f9f9f9;
 }
 
-main, aside {
-    max-width: 840px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ddd;
+/* 4. Page Layout Wrapper */
+header, main, footer {
+  max-width: 840px; /* Changed to max-width for better responsiveness */
+  margin: 0 auto;
+  background-color: var(--accent2-color);
 }
 
-/* Aside Styling per Assignment */
-aside {
-    width: auto; /* Allow it to be responsive */
-    max-width: 400px;
-    text-align: center;
+/* 5. Typography */
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 10px;
 }
 
-aside img {
-    width: 100%; /* Make image responsive within aside */
-    height: auto;
+nav, p, section, article {
+  margin: 16px;
+  padding: 8px;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
-    border-top: 5px solid #000; /* Added distinction */
+/* 6. Footer Links */
+.socialmedia a {
+  text-decoration: none;
+}
+
+/* 7. Hero Section Styling */
+.hero {
+  position: relative;
+  display: block; /* Ensures container wraps the image */
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Hero Heading Overlay */
+.hero h1 {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  background-color: var(--accent1-color); 
+  color: #fff; /* White text for contrast */
+  padding: 16px;
+  text-align: center;
+  opacity: 0.7; /* Slightly transparent for better readability */
+}
+
+/* Hero Article Overlay */
+.hero article {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Article Image Float */
+.hero article img {
+  float: right;
+  width: 125px;
+  margin-left: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  box-shadow: #004e64 2px 2px 5px; /* Subtle shadow for depth */
+}
+
+/* Clearfix for the floated image inside the article */
+.hero article::after {
+  content: "";
+  display: table;
+  clear: both;
 }

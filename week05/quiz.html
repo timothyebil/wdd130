@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Quiz Form</title>
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+<body>
+    <header>
+        <h1>✅ Basic HTML and CSS Quiz</h1>
+        <nav><a href="index.html">Back to Quiz</a></nav>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section class="content-box">
+            <h2>Our Mission</h2>
+            <p>We aim to make web development accessible to everyone through interactive quizzes and hands-on learning.</p>
+            <h2>The Team</h2>
+            <p>Created by Timothy Ebil, a passionate developer dedicated to teaching the core pillars of the web: HTML and CSS.</p>
+        </section>
+
+        <!-- Quiz Form -->
+        <form id="quizForm">
+            <fieldset>
+                <legend>Knowledge Check</legend>
+                
+                <div class="form-group">
+                    <label for="q1">1. What does HTML stand for?</label>
+                    <input type="text" id="q1" name="q1" placeholder="e.g. HyperText Markup Language" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="q2">2. Briefly describe the purpose of a CSS selector:</label>
+                    <textarea id="q2" name="q2" rows="4" placeholder="Type your answer here..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="q3">3. Which property is used to change the background color in CSS?</label>
+                    <select id="q3" name="q3" required>
+                        <option value="" selected disabled>Choose One ...</option>
+                        <option value="color">color</option>
+                        <option value="background-color">background-color</option>
+                        <option value="fill">fill</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q4">4. How many levels of headings are standard in HTML?</label>
+                    <!-- Max set to 6 as per standard HTML heading levels -->
+                    <input type="number" id="q4" name="q4" min="1" max="6" required>
+                </div>
+            </fieldset>
+            
+            <button type="submit">Submit Quiz for Grading</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Timothy Ebil</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle form submission without page reload
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you, Timothy! Your quiz has been submitted for grading.');
+        });
+    </script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Dry Oar Boating</title>
-    <meta name="description" content="Discover the history, mission, and expert team behind Dry Oar Boating.">
+    <title>Contact Us | Dry Oar Boating</title>
+    <meta name="description" content="Get in touch with Dry Oar Boating. Find our office location, meet our team, or send us a message for reservations and inquiries.">
     <meta name="author" content="Timothy Ebil">
     <link rel="stylesheet" href="styles/rafting.css">
 </head>
@@ -19,105 +19,108 @@
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="trips.html">Trips</a>
-            <a href="contactus.html">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
     </header>
 
-     <!-- Main Content -->
     <main>
-        <h1>Contact Our Team</h1>
-        <p>123 Main River Street, Boise, California</p>
-        <p>Phone: +1 888 888 8888 | Email: info@whitewater.com</p>
+        <div class="contact-container">
+            <h1>Contact Us</h1>
 
-        <div class="contact-wrapper">
-            <!-- Contact Form -->
-            <form action="#" method="post" class="contact-form">
-                <h2>Send a Message</h2>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required placeholder="Your Name">
+            <!-- Company Information -->
+            <section class="company-info">
+                <h2>Our Office</h2>
+                <p><strong>Dry Oar Boating</strong></p>
+                <address>
+                    123 River Road<br>
+                    Adventure Town, UT 84000<br>
+                    Phone: <a href="tel:5551234567">(555) 123-4567</a><br>
+                    Email: <a href="mailto:info@dryoarboating.com">info@dryoarboating.com</a>
+                </address>
+            </section>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-
-                <fieldset>
-                    <legend>Message Purpose</legend>
-                    <input type="radio" id="gen" name="purpose" value="general" checked>
-                    <label for="gen">General Inquiry</label><br>
-                    <input type="radio" id="res" name="purpose" value="reservation">
-                    <label for="res">Reservation Question</label><br>
-                    <input type="radio" id="web" name="purpose" value="website">
-                    <label for="web">Website Suggestion</label>
-                </fieldset>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="newsletter" name="newsletter" checked>
-                    <label for="newsletter">Subscribe to our newsletter?</label>
+            <!-- Google Map -->
+            <section class="map">
+                <h2>Find Us</h2>
+                <!-- Replace YOUR_GOOGLE_MAP_EMBED_LINK with an actual URL from Google Maps -->
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2679!2d-111.89!3d40.76!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM4KwNDUnMzYuMCJOIDExMcKwNTMnMjQuMCJX!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+            <!-- Employee Profiles -->
+            <section class="employees">
+                <h2>Meet Our Team</h2>
+                <div class="employee-grid">
+                    <figure>
+                        <img src="images/jane-doe.jpg" alt="Jane Doe, General Manager">
+                        <figcaption>Jane Doe - General Manager</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/jane-smith.jpg" alt="Jane Smith, Lead Guide">
+                        <figcaption>Jane Smith - Lead Guide</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/bob-jones.jpg" alt="Bob Jones, Booking Agent">
+                        <figcaption>Bob Jones - Booking Agent</figcaption>
+                    </figure>
                 </div>
+            </section>
+            <!-- Contact Form -->
+            <section class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form action="thanks.html" method="get">
+                    <div class="form-item">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name" required>
+                    </div>
+                    
+                    <div class="form-item">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="user_email" required>
+                    </div>
 
-                <button type="submit">Send Now</button>
-            </form>
-             <!-- Embedded Map -->
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?..." width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+                    <fieldset>
+                        <legend>Purpose of Message:</legend>
+                        <div class="radio-option">
+                            <input type="radio" id="general" name="purpose" value="general" checked required>
+                            <label for="general">General Inquiry</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="reservation" name="purpose" value="reservation">
+                            <label for="reservation">Reservation Question</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="suggestion" name="purpose" value="suggestion">
+                            <label for="suggestion">Website Suggestion</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-item">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="user_message" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-item checkbox">
+                        <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                        <label for="subscribe">Please subscribe me to the monthly newsletter</label>
+                    </div>
+
+                    <button type="submit">Submit Inquiry</button>
+                </form>
+            </section>
         </div>
-  <!-- Employee Profiles -->
-        <section class="staff">
-    <h2>We Are Here to Serve You</h2>
-    <div class="staff-grid">
-  <div class="column">
-    <div class="card">
-      <img src="images/jane-doe.jpg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Jane Doe</h2>
-        <p class="title">CEO & Founder</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="images/mike-rose.jpg" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Mike Ross</h2>
-        <p class="title">Art Director</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="images/john-doe.jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>john doe</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
-
     </main>
+
     <footer>
         <p>&copy; 2026 Dry Oar Boating | Timothy Ebil</p>
         <nav class="socialmedia">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer"> <img src="images/facebook-icon.svg" alt="Follow us on Facebook"> </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer"> <img src="images/linkedin-icon.svg" alt="Follow us on LinkedIn"> </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer"> <img src="images/instagram-icon.svg" alt="Follow us on Instagram"> </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener">
+                <img src="images/facebook-icon.jpg" alt="Follow us on Facebook">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener">
+                <img src="images/linkedin-icon.jpg" alt="Follow us on LinkedIn">
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener">
+                <img src="images/instagram-icon.jpg" alt="Follow us on Instagram">
+            </a>
         </nav>
     </footer>
 </body>

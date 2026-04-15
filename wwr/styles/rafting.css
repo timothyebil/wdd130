@@ -1,3 +1,130 @@
+/* Layout and General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
+    padding: 10px 5%;
+}
+
+.logo { width: 100px; }
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Hero Section with Absolute Positioning */
+.hero {
+    position: relative;
+    width: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+/* Call to Action */
+.cta-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.cta-button {
+    background-color: #d9534f;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* CSS Grid Layout */
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px 5%;
+    align-items: center;
+}
+
+.home-grid img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Newsletter Section */
+.newsletter {
+    background-color: #003366;
+    color: white;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.newsletter input {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    border-radius: 4px;
+    border: none;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #333;
+    color: white;
+}
+
+.socialmedia img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .hero { position: relative; }
 .hero-msg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }

@@ -1,14 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 130 | Personal Homepage</title>
-</head>
-<body>
-    <h1>Welcome to WDD 130.</h1>
-    <p>This page will become your homepage for the course. You will remove this text and replace it with your own personal details.</p>
+    <title>Timothy Ebil | WDD 130 Home Page</title>
+    <meta name="description"
+      content="Timothy Ebil's WDD 130 home page featuring web design assignments and information about Oyam District, Uganda.">
+    <meta name="author" content="Timothy Ebil">
 
-    <img src="images/salt-lake-temple.jpg" alt="The Salt Lake Temple.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="wwr/">Rafting Website</a>
+        </nav>
+    </header>
+
+    <div class="main-layout">
+        <main>
+            <h1>Timothy Ebil | WDD 130</h1>
+            <!-- Added height for performance -->
+            <img src="images/profile.jpg" alt="Portrait of Timothy Ebil" width="200" height="225"
+              class="profile-img">
+            <p>Hello! I am from Oyam District, Northern Uganda. I enjoy building houses and
+                traveling. I am currently studying Web Design and Development at BYU-Pathway.</p>
+
+            <h2>Favorite Temples</h2>
+            <ul class="box">
+                <li><a href="https://www.churchofjesuschrist.org/temples/details/philadelphia-pennsylvania-temple"
+                      target="_blank" rel="noopener">Philadelphia Pennsylvania</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/temples/details/paris-france-temple"
+                      target="_blank" rel="noopener">Paris France</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/temples/details/lima-peru-los-olivos-temple"
+                      target="_blank" rel="noopener">Lima Peru</a></li>
+            </ul>
+        </main>
+
+        <aside>
+            <h3>Oyam District, Uganda</h3>
+            <figure>
+                <!-- Added height for performance -->
+                <img src="images/northern_uganda_01.jpg" alt="Savanna landscape in Oyam District"
+                  width="400" height="225" class="landscape-img">
+                <figcaption>The beautiful savanna of Northern Uganda.</figcaption>
+            </figure>
+            <p>Oyam District is located in Northern Uganda, bordering Murchison Falls National Park.
+                It is known for its savanna landscapes and agricultural heritage.</p>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Uganda | Last Modified: <span
+              id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById("currentyear").textContent = new Date().getFullYear();
+        // Set last modified date
+        document.getElementById("lastModified").textContent = document.lastModified;
+    </script>
 </body>
+
 </html>

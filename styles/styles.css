@@ -65,7 +65,6 @@ header h1 {
     text-align: center;
 }
 
-/* FIXED: Semicolons verified. Strict, raw hex values supplied directly to bypass validator parsing blocks */
 nav {
     background-color: #4682b4;
     padding: 1rem;
@@ -76,7 +75,6 @@ nav {
     border-radius: 5px;
 }
 
-/* FIXED: Semicolons verified. Native style parameters explicit for compliance */
 nav a {
     color: #ffffff;
     padding: 10px 20px;
@@ -230,11 +228,11 @@ figcaption {
    ========================================== */
 footer {
     margin-top: 15px;
-    /* 1 Adds top margin spacing to cleanly clear page content above */
+    /* Adds top margin spacing to cleanly clear page content above */
     border-top: 1px solid #000000;
-    /* 2 Adds a clean top border distinct formatting layer */
+    /* Adds a clean top border distinct formatting layer */
     text-align: center;
-    /* 3 Enforces baseline horizontal text-centering */
+    /* Enforces baseline horizontal text-centering */
     padding: 1.5rem 0;
     font-size: 0.95rem;
 }

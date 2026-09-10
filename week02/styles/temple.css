@@ -1,0 +1,118 @@
+/* Universal element resets and structural sizing properties */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Full-width dark layout elements matching the screen cap headers */
+header,
+footer {
+    background-color: #212529;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    padding: 16px 12px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+}
+
+footer p {
+    font-size: 1.05rem;
+}
+
+/* Centered layout canvas block wrapper */
+main {
+    width: 100%;
+    max-width: 560px;
+    /* Limits standard workspace width relative to image scales */
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+main h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+/* Replicates the prominent soft bleed drop shadow around the photo container */
+main img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Soft light gray card information boxes */
+.info-block {
+    background-color: #e9ecef;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-block:last-of-type {
+    margin-bottom: 8px;
+}
+
+/* Crisp narrow rule dividers below subheadings */
+.info-block h3 {
+    font-size: 1.35rem;
+    color: #000000;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #adb5bd;
+}
+
+.info-block p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.info-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Bullet item styles and configurations */
+.info-block ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.info-block li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.info-block li:last-child {
+    margin-bottom: 0;
+}
+
+/* Hyperlinks decoration overrides */
+.info-block a {
+    color: #0022cc;
+    text-decoration: underline;
+}
+
+.info-block a:hover {
+    color: #0011aa;
+}

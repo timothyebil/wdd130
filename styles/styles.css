@@ -1,13 +1,14 @@
-main {
-    max-width: 840px;
-}
-
+/* ==========================================
+   1. GLOBAL ARCHITECTURE & SYSTEM TOKENS
+   ========================================== */
 :root {
     --primary-color: #4682b4;
-    --text-color: #333;
-    --background-color: #fff;
-    --box-bg-color: #eee;
-    --footer-border-color: #000;
+    --primary-dark: #2c5270;
+    --text-color: #333333;
+    --background-color: #ffffff;
+    --box-bg-color: #eeeeee;
+    --footer-border-color: #000000;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -27,94 +28,224 @@ body {
     margin: 0 auto;
 }
 
-/* Navigation */
-nav {
-    background-color: var(--primary-color);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-around;
-    /* Better spacing for mobile */
-    border-radius: 5px;
-}
-
-nav a {
-    color: white;
-    padding: 10px;
-    display: block;
-}
-
-nav a:hover {
-    text-decoration: underline;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Layout */
-.main-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-main {
-    display: flow-root;
-    /* Clears the floated image automatically */
-}
-
-/* Sidebar Image */
-aside img {
-    width: 200px;
-    height: auto;
-}
-
-aside figcaption {
-    font-size: 0.8rem;
-    font-style: italic;
-    margin-top: 5px;
-}
-
-h1 {
-    color: steelblue;
-}
-
-main img {
-    float: right;
-    width: 150px;
-    height: auto;
-    border: 1px solid steelblue;
-    padding: 2px;
-    box-shadow: 0 0 30px grey
+h1,
+h2,
+h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
 }
 
 p {
-    padding: 0px;
+    padding: 0;
+    /* Assignment Requirement Override: Paragraph internal padding reduced to 0 */
+    margin-bottom: 1rem;
 }
 
-aside {
-    width: 20em;
-    margin: 1em;
-    border: 1px solid rgba(0, 0, 0.2);
-    /* Light border for separation */
-    padding: 1em;
-    background-color: #eee;
-    color: #333;
+/* ==========================================
+   2. HEADER & FLEXBOX NAVIGATION
+   ========================================== */
+header {
+    background-color: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+header h1 {
+    color: #ffffff;
+    margin-bottom: 0;
+    font-size: 1.8rem;
     text-align: center;
 }
 
-/* Desktop Adjustment */
+nav {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+}
+
+nav a {
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    font-weight: 700;
+}
+
+nav a:hover,
+nav a.active {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   3. MOBILE-FIRST RESPONSIVE GRID LAYOUT
+   ========================================== */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Stacks vertically into a clean 1-column layout flow on mobile viewports */
+    gap: 20px;
+}
+
+/* Assignment Requirement: Limit maximum width layout boundaries */
+main {
+    max-width: 840px;
+    display: flow-root;
+    /* Automatically isolates floated profile element bounds */
+}
+
+.profile-card,
+.temple-section {
+    margin-bottom: 2rem;
+}
+
+.bio-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Parent Nesting Selector Strategy: Isolate student profile photo overrides cleanly */
+main img {
+    float: right;
+    width: 200px;
+    /* Perfectly set to match your portrait's configuration dimensions */
+    height: auto;
+    /* Height auto configuration prevents image distortion or pixelation */
+    border: 2px solid var(--primary-color);
+    padding: 4px;
+    background-color: #ffffff;
+    /* Provides a crisp polaroid border gap effect */
+    border-radius: 8px;
+    /* Smooth rounded edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    /* Soft drop shadow */
+    margin: 0 0 15px 15px;
+    /* Displaces text flow cleanly from boundaries */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Prepares presentation animation engine */
+}
+
+/* Interactive Hover floating state animations */
+main img:hover {
+    transform: translateY(-5px);
+    /* Elevates element slightly upon cursor contact */
+    box-shadow: 0 8px 25px rgba(70, 130, 180, 0.3);
+    /* Accent glow */
+}
+
+.box {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.box li {
+    margin-bottom: 0.5rem;
+}
+
+.box a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.box a:hover {
+    text-decoration: underline;
+}
+
+/* --- Assignment Requirement: Aside Selector Configuration Details --- */
+aside {
+    width: 20rem;
+    /* Fixed block assignment width layout parameter */
+    margin: 1rem auto;
+    /* Centers the component block cleanly on thin viewports */
+    border: 1px solid rgb(0 0 0 / 0.2);
+    /* Soft semi-transparent boundary utilizing alpha layering */
+    padding: 1rem;
+    background-color: var(--box-bg-color);
+    color: #333333;
+    text-align: center;
+    border-radius: 6px;
+    height: fit-content;
+    box-shadow: var(--card-shadow);
+}
+
+aside h3 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+figure {
+    margin: 1rem 0;
+}
+
+/* Assignment Requirement: Constrain aside images specifically */
+aside img {
+    width: 200px;
+    height: auto;
+    /* Protects native aspect ratio from stretch distortion or pixelation */
+    border-radius: 4px;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #555555;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   4. DESKTOP ADAPTATIONS (min-width: 768px)
+   ========================================== */
 @media (min-width: 768px) {
-    .main-layout {
-        grid-template-columns: 2fr 1fr;
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     nav {
-        justify-content: flex-start;
-        gap: 30px;
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .main-layout {
+        grid-template-columns: 2.2fr 1fr;
+        /* Snaps grid into structured columns layout on wide screens */
+    }
+
+    .bio-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    aside {
+        margin: 0 1rem 1rem 1rem;
+        /* Balances spatial margins side-by-side on wide displays */
     }
 }
 
+/* ==========================================
+   5. ASSIGNMENT REQUIREMENT: FOOTER PROPERTIES
+   ========================================== */
 footer {
-    margin-top: 1em;
-    border-top: 1px solid #000;
+    margin-top: 15px;
+    /* 1️⃣ Adds top margin spacing to cleanly clear page content above */
+    border-top: 1px solid var(--footer-border-color);
+    /* 2️⃣ Adds a clean top border distinct formatting layer */
     text-align: center;
+    /* 3️⃣ Enforces absolute baseline horizontal text-centering */
+    padding: 1.5rem 0;
+    font-size: 0.95rem;
 }

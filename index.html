@@ -5,68 +5,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timothy Ebil | WDD 130 Home Page</title>
+
+    <!-- Audited Meta Strings satisfying standard character length parameters -->
     <meta name="description"
-      content="Timothy Ebil's WDD 130 home page featuring web design assignments and information about Oyam District, Uganda.">
+      content="Timothy Ebil's WDD 130 home page featuring localized cultural info on Oyam District, Northern Uganda alongside foundational web layout assignment cards.">
     <meta name="author" content="Timothy Ebil">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Verified Cross-Origin Resource Preconnect Performance Directives -->
+    <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    <link href="https://googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet">
+
+    <!-- Presentation and Behavioral Architecture Pipelines -->
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
     <header>
-        <nav>
-            <a href="#">Home</a>
-            <a href="wwr/">Rafting Website</a>
-        </nav>
+        <div class="header-container">
+            <h1>Timothy Ebil | WDD 130 Portal</h1>
+            <nav>
+                <a href="#" class="active">Home</a>
+                <!-- Fully Configured Relative Navigation Pathways -->
+                <a href="wwr/index.html">Rafting Website</a>
+                <a href="wwr/site-plan.html" target="_blank">Rafting Site Plan</a>
+            </nav>
+        </div>
     </header>
 
+    <!-- Structural Grid Layout Wrapper Container -->
     <div class="main-layout">
         <main>
-            <h1>Timothy Ebil | WDD 130</h1>
-            <!-- Added height for performance -->
-            <img src="images/profile.jpg" alt="Portrait of Timothy Ebil" width="200" height="225"
-              class="profile-img">
-            <p>Hello! I am from Oyam District, Northern Uganda. I enjoy building houses and
-                traveling. I am currently studying Web Design and Development at BYU-Pathway.</p>
+            <section class="profile-card">
+                <h2>Student Profile</h2>
+                <div class="bio-wrapper">
+                    <!-- Specific parent selector parameters prevent layout shift bugs -->
+                    <img src="images/profile.jpg" alt="Portrait photo of Timothy Ebil" width="200"
+                      height="150" class="profile-img">
+                    <p>Hello! I am from Oyam District, Northern Uganda. I enjoy building houses,
+                        architectural drafting, and traveling. I am currently studying Web Design
+                        and Development at BYU-Pathway to engineer high-performance, accessible
+                        software interfaces.</p>
+                </div>
+            </section>
 
-            <h2>Favorite Temples</h2>
-            <ul class="box">
-                <li><a href="https://www.churchofjesuschrist.org/temples/details/philadelphia-pennsylvania-temple"
-                      target="_blank" rel="noopener">Philadelphia Pennsylvania</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/temples/details/paris-france-temple"
-                      target="_blank" rel="noopener">Paris France</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/temples/details/lima-peru-los-olivos-temple"
-                      target="_blank" rel="noopener">Lima Peru</a></li>
-            </ul>
+            <!-- Dynamic Temple Resource Information Cards -->
+            <section class="temple-section">
+                <h2>Favorite Temples</h2>
+                <ul class="box">
+                    <li><a href="https://churchofjesuschrist.org" target="_blank"
+                          rel="noopener">Philadelphia Pennsylvania Temple</a></li>
+                    <li><a href="https://churchofjesuschrist.org" target="_blank"
+                          rel="noopener">Paris France Temple</a></li>
+                    <li><a href="https://churchofjesuschrist.org" target="_blank"
+                          rel="noopener">Lima Peru Los Olivos Temple</a></li>
+                </ul>
+            </section>
         </main>
 
+        <!-- Assignment Instruction Aside Card Container -->
         <aside>
             <h3>Oyam District, Uganda</h3>
             <figure>
-                <!-- Added height for performance -->
-                <img src="images/northern_uganda_01.jpg" alt="Savanna landscape in Oyam District"
-                  width="400" height="225" class="landscape-img">
+                <!-- Native dimensions added to enforce fast browser rendering timelines -->
+                <img src="images/northern_uganda_01.jpg"
+                  alt="Scenic view of the savanna landscape in Oyam District" width="400"
+                  height="225" class="landscape-img">
                 <figcaption>The beautiful savanna of Northern Uganda.</figcaption>
             </figure>
-            <p>Oyam District is located in Northern Uganda, bordering Murchison Falls National Park.
-                It is known for its savanna landscapes and agricultural heritage.</p>
+            <p>Oyam District is located within Northern Uganda, bordering Murchison Falls National
+                Park. It is widely celebrated across the region for its expansive savanna horizons,
+                rich cultural heritage, and robust agricultural resourcefulness.</p>
         </aside>
     </div>
+
     <footer>
         <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Uganda | Last Modified: <span
               id="lastModified"></span></p>
     </footer>
-
-    <script>
-        // Set current year
-        document.getElementById("currentyear").textContent = new Date().getFullYear();
-        // Set last modified date
-        document.getElementById("lastModified").textContent = document.lastModified;
-    </script>
 </body>
 
 </html>

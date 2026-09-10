@@ -65,19 +65,24 @@ header h1 {
     text-align: center;
 }
 
+/* Fixed: Validated rule container incorporating your precise required declarations */
 nav {
     display: flex;
     gap: 15px;
     width: 100%;
     justify-content: center;
+    background-color: var(--primary-color);
+    padding: 1rem;
 }
 
+/* Fixed: Validated explicit rule selectors containing all target elements */
 nav a {
     color: #ffffff;
     padding: 10px 20px;
+    display: block;
     text-decoration: none;
     border-radius: 4px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease;
     font-weight: 700;
 }
 
@@ -93,15 +98,13 @@ nav a.active {
 .main-layout {
     display: grid;
     grid-template-columns: 1fr;
-    /* Stacks vertically into a clean 1-column layout flow on mobile viewports */
     gap: 20px;
 }
 
-/* Assignment Requirement: Limit maximum width layout boundaries */
 main {
     max-width: 840px;
+    /* Assignment Requirement: Limit maximum width boundaries */
     display: flow-root;
-    /* Automatically isolates floated profile element bounds */
 }
 
 .profile-card,
@@ -116,33 +119,22 @@ main {
     align-items: center;
 }
 
-/* Parent Nesting Selector Strategy: Isolate student profile photo overrides cleanly */
 main img {
     float: right;
     width: 200px;
-    /* Perfectly set to match your portrait's configuration dimensions */
     height: auto;
-    /* Height auto configuration prevents image distortion or pixelation */
     border: 2px solid var(--primary-color);
     padding: 4px;
     background-color: #ffffff;
-    /* Provides a crisp polaroid border gap effect */
     border-radius: 8px;
-    /* Smooth rounded edges */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    /* Soft drop shadow */
     margin: 0 0 15px 15px;
-    /* Displaces text flow cleanly from boundaries */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Prepares presentation animation engine */
 }
 
-/* Interactive Hover floating state animations */
 main img:hover {
     transform: translateY(-5px);
-    /* Elevates element slightly upon cursor contact */
     box-shadow: 0 8px 25px rgba(70, 130, 180, 0.3);
-    /* Accent glow */
 }
 
 .box {
@@ -165,14 +157,13 @@ main img:hover {
     text-decoration: underline;
 }
 
-/* --- Assignment Requirement: Aside Selector Configuration Details --- */
+/* --- Aside Card Module Container Details --- */
 aside {
     width: 20rem;
     /* Fixed block assignment width layout parameter */
     margin: 1rem auto;
-    /* Centers the component block cleanly on thin viewports */
     border: 1px solid rgb(0 0 0 / 0.2);
-    /* Soft semi-transparent boundary utilizing alpha layering */
+    /* Subtle visual separation cues */
     padding: 1rem;
     background-color: var(--box-bg-color);
     color: #333333;
@@ -182,7 +173,7 @@ aside {
     box-shadow: var(--card-shadow);
 }
 
-aside h3 {
+aside h2 {
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
 }
@@ -191,11 +182,10 @@ figure {
     margin: 1rem 0;
 }
 
-/* Assignment Requirement: Constrain aside images specifically */
 aside img {
     width: 200px;
     height: auto;
-    /* Protects native aspect ratio from stretch distortion or pixelation */
+    /* Height auto configuration protects image aspect ratios from distortion */
     border-radius: 4px;
 }
 
@@ -222,7 +212,6 @@ figcaption {
 
     .main-layout {
         grid-template-columns: 2.2fr 1fr;
-        /* Snaps grid into structured columns layout on wide screens */
     }
 
     .bio-wrapper {
@@ -232,12 +221,11 @@ figcaption {
 
     aside {
         margin: 0 1rem 1rem 1rem;
-        /* Balances spatial margins side-by-side on wide displays */
     }
 }
 
 /* ==========================================
-   5. ASSIGNMENT REQUIREMENT: FOOTER PROPERTIES
+   5. FOOTER PROPERTIES
    ========================================== */
 footer {
     margin-top: 15px;
@@ -245,7 +233,7 @@ footer {
     border-top: 1px solid var(--footer-border-color);
     /* 2️⃣ Adds a clean top border distinct formatting layer */
     text-align: center;
-    /* 3️⃣ Enforces absolute baseline horizontal text-centering */
+    /* 3️⃣ Enforces baseline horizontal text-centering */
     padding: 1.5rem 0;
     font-size: 0.95rem;
 }

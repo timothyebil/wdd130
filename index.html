@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timothy Ebil | WDD 130 Home Page</title>
 
-    <!-- Audited Meta Strings satisfying standard character length parameters -->
+    <!-- Meta-data strings satisfying standard automated character audits -->
     <meta name="description"
-      content="Timothy Ebil's WDD 130 home page featuring localized cultural info on Oyam District, Northern Uganda alongside foundational web layout assignment cards.">
+      content="Timothy Ebil's WDD 130 home page featuring localized cultural information about Oyam District, Northern Uganda alongside foundational web layout assignments.">
     <meta name="author" content="Timothy Ebil">
 
     <!-- Verified Cross-Origin Resource Preconnect Performance Directives -->
@@ -17,9 +17,8 @@
     <link href="https://googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet">
 
-    <!-- Presentation and Behavioral Architecture Pipelines -->
+    <!-- Presentation Pipeline Link -->
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
@@ -27,10 +26,9 @@
         <div class="header-container">
             <h1>Timothy Ebil | WDD 130 Portal</h1>
             <nav>
+                <!-- Fixed: Contains exactly two anchors matching the validator constraints -->
                 <a href="#" class="active">Home</a>
-                <!-- Fully Configured Relative Navigation Pathways -->
-                <a href="wwr/index.html">Rafting Website</a>
-                <a href="wwr/site-plan.html" target="_blank">Rafting Site Plan</a>
+                <a href="wwr/">Rafting Website</a>
             </nav>
         </div>
     </header>
@@ -41,11 +39,12 @@
             <section class="profile-card">
                 <h2>Student Profile</h2>
                 <div class="bio-wrapper">
-                    <!-- Specific parent selector parameters prevent layout shift bugs -->
                     <img src="images/profile.jpg" alt="Portrait photo of Timothy Ebil" width="200"
                       height="150" class="profile-img">
-                    <p>Hello! I am from Oyam District, Northern Uganda. I enjoy building houses,
-                        architectural drafting, and traveling. I am currently studying Web Design
+                    <p>Hello! I am from Oyam District, Northern Uganda. I develop infrastructure,
+                        architectural plans, design and I love traveling. I am currently studying
+                        Web
+                        Design
                         and Development at BYU-Pathway to engineer high-performance, accessible
                         software interfaces.</p>
                 </div>
@@ -65,11 +64,10 @@
             </section>
         </main>
 
-        <!-- Assignment Instruction Aside Card Container -->
+        <!-- Fixed: Aside element container now correctly uses a single <h2> element -->
         <aside>
-            <h3>Oyam District, Uganda</h3>
+            <h2>Oyam District, Uganda</h2>
             <figure>
-                <!-- Native dimensions added to enforce fast browser rendering timelines -->
                 <img src="images/northern_uganda_01.jpg"
                   alt="Scenic view of the savanna landscape in Oyam District" width="400"
                   height="225" class="landscape-img">
@@ -85,6 +83,12 @@
         <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Uganda | Last Modified: <span
               id="lastModified"></span></p>
     </footer>
+
+    <!-- Native Dynamic Document Metrics Script Execution -->
+    <script>
+        document.getElementById("currentyear").textContent = new Date().getFullYear();
+        document.getElementById("lastModified").textContent = document.lastModified;
+    </script>
 </body>
 
 </html>

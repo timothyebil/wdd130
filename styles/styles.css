@@ -21,8 +21,8 @@ body {
     font-size: 16px;
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: #333333;
+    background-color: #ffffff;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -32,7 +32,7 @@ h1,
 h2,
 h3 {
     margin-bottom: 1rem;
-    color: var(--primary-dark);
+    color: #2c5270;
 }
 
 p {
@@ -45,7 +45,7 @@ p {
    2. HEADER & FLEXBOX NAVIGATION
    ========================================== */
 header {
-    background-color: var(--primary-color);
+    background-color: #4682b4;
     padding: 1.5rem;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -65,7 +65,7 @@ header h1 {
     text-align: center;
 }
 
-/* FIXED: Contains the required explicit background-color and padding styles */
+/* FIXED: Raw hex variables declared explicitly to ensure passing jigsaw.w3.org specs */
 nav {
     background-color: #4682b4;
     padding: 1rem;
@@ -76,7 +76,7 @@ nav {
     border-radius: 5px;
 }
 
-/* FIXED: Contains explicit color, padding, and block display settings to pass validation */
+/* FIXED: Native style parameters hard-coded to avoid variable parse alerts */
 nav a {
     color: #ffffff;
     padding: 10px 20px;
@@ -124,7 +124,7 @@ main img {
     float: right;
     width: 200px;
     height: auto;
-    border: 2px solid var(--primary-color);
+    border: 2px solid #4682b4;
     padding: 4px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -149,7 +149,7 @@ main img:hover {
 }
 
 .box a {
-    color: var(--primary-color);
+    color: #4682b4;
     text-decoration: none;
     font-weight: 700;
 }
@@ -166,16 +166,16 @@ aside {
     border: 1px solid rgb(0 0 0 / 0.2);
     /* Transparent alpha shading method */
     padding: 1rem;
-    background-color: var(--box-bg-color);
+    background-color: #eeeeee;
     color: #333333;
     text-align: center;
     border-radius: 6px;
     height: fit-content;
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 aside h2 {
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid #4682b4;
     padding-bottom: 0.5rem;
 }
 
@@ -230,11 +230,11 @@ figcaption {
    ========================================== */
 footer {
     margin-top: 15px;
-    /* 1️⃣ Adds top margin spacing to cleanly clear page content above */
-    border-top: 1px solid var(--footer-border-color);
-    /* 2️⃣ Adds a clean top border distinct formatting layer */
+    /* 1 Adds top margin spacing to cleanly clear page content above */
+    border-top: 1px solid #000000;
+    /* 2 Adds a clean top border distinct formatting layer */
     text-align: center;
-    /* 3️⃣ Enforces baseline horizontal text-centering */
+    /* 3 Enforces baseline horizontal text-centering */
     padding: 1.5rem 0;
     font-size: 0.95rem;
 }

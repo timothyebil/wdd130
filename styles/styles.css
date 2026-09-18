@@ -1,238 +1,283 @@
-/* ==========================================
-   1. GLOBAL ARCHITECTURE & SYSTEM TOKENS
-   ========================================== */
-:root {
-    --primary-color: #4682b4;
-    --primary-dark: #2c5270;
-    --text-color: #333333;
-    --background-color: #ffffff;
-    --box-bg-color: #eeeeee;
-    --footer-border-color: #000000;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-* {
+/* ==========================================================================
+   1. GLOBAL SYSTEM RESETS & TYPOGRAPHY PIPELINES
+   ========================================================================== */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #222222;
+    /* High contrast copy scale */
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-    font-size: 16px;
-    font-family: 'Roboto', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333333;
-    background-color: #ffffff;
-    padding: 20px;
-    max-width: 1200px;
+/* ==========================================================================
+   2. REUSABLE CONTAINER ENCAPSULATION & CENTERING
+   ========================================================================== */
+header,
+.grid,
+footer {
+    max-width: 840px;
     margin: 0 auto;
 }
 
-h1,
-h2,
-h3 {
+/* ==========================================================================
+   3. TYPOGRAPHIC HIERARCHY DECK (BALANCED HEADERS)
+   ========================================================================== */
+h1 {
+    color: #1C3B57;
+    /* Deep high-contrast blue wrapper */
+    font-size: 2.2rem;
+    font-weight: 700;
+    border-bottom: 1px solid #b0c4de;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+h2 {
+    color: #1C3B57;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 0;
     margin-bottom: 1rem;
-    color: #2c5270;
+    line-height: 1.3;
 }
 
-p {
-    padding: 0;
-    /* Assignment Requirement Override: Paragraph internal padding reduced to 0 */
-    margin-bottom: 1rem;
-}
-
-/* ==========================================
-   2. HEADER & FLEXBOX NAVIGATION
-   ========================================== */
-header {
-    background-color: #4682b4;
-    padding: 1.5rem;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-header h1 {
-    color: #ffffff;
-    margin-bottom: 0;
-    font-size: 1.8rem;
-    text-align: center;
-}
-
+/* ==========================================================================
+   4. NAVIGATION BAR INTERFACES (CSS FLEXBOX STYLE & HOVER ANIMATIONS)
+   ========================================================================== */
 nav {
-    background-color: #4682b4;
-    padding: 1rem;
+    background-color: #1C3B57;
+    padding: 0.5rem 1rem;
     display: flex;
-    gap: 15px;
-    width: 100%;
-    justify-content: center;
-    border-radius: 5px;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 nav a {
-    color: #ffffff;
-    padding: 10px 20px;
     display: block;
+    padding: 0.75rem 1.2rem;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+    font-size: 1.1rem;
     font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.2;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 nav a:hover,
+nav a:focus {
+    background-color: #ffffff;
+    color: #1C3B57;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    outline: none;
+}
+
 nav a.active {
-    text-decoration: underline;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px dashed #ffffff;
+    text-decoration: none;
 }
 
-/* ==========================================
-   3. MOBILE-FIRST RESPONSIVE GRID LAYOUT
-   ========================================== */
-.main-layout {
+/* ==========================================================================
+   5. TWO-COLUMN GRID SYSTEM DESIGN
+   ========================================================================== */
+.grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-main {
-    max-width: 840px;
-    /* Assignment Requirement: Limit maximum width boundaries */
-    display: flow-root;
-}
-
-.profile-card,
-.temple-section {
+    align-items: start;
+    grid-template-columns: 20rem auto;
+    gap: 2.5rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
-.bio-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
+main {
+    grid-column: 2 / 3;
+    padding: 0 1rem;
 }
 
-main img {
+/* ==========================================================================
+   6. PROFILE AND BIOGRAPHICAL WRAPPER (FADE-IN ANIMATION ENABLED)
+   ========================================================================== */
+.bio-wrapper img {
     float: right;
-    width: 200px;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    width: 150px;
     height: auto;
-    border: 2px solid #4682b4;
-    padding: 4px;
+    border: 1px solid steelblue;
+    padding: 2px;
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    margin: 0 0 15px 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.5);
+    box-sizing: border-box;
+
+    /* SPECIALIZED HOVER EFFICIENCY: Initiates clean hardware-accelerated fade-in */
+    animation: smoothFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-main img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(70, 130, 180, 0.3);
+/* Perfected text layout mapping satisfying padding audit rules */
+.bio-wrapper p {
+    font-size: 1.05rem;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    line-height: 1.65;
+}
+
+/* Keyframes declaration engine for fade positioning properties */
+@keyframes smoothFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        /* Soft drop origin rise */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   7. SIDEBAR (ASIDE) ASSET WINDOW PLACEMENT
+   ========================================================================== */
+aside {
+    width: 20rem;
+    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: #f9f9f9;
+    padding: 1.2rem;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+}
+
+.aside-image-container {
+    position: relative;
+    text-align: center;
+}
+
+.aside-image-label {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 0.2rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1;
+    color: #1C3B57;
+}
+
+aside figcaption {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #444444;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. MEDIA OBJECTS AND RESOURCE DECK LAYOUTS
+   ========================================================================== */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .box {
-    list-style-type: square;
-    padding-left: 20px;
-    margin-bottom: 1.5rem;
+    list-style-type: none;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    margin-top: 1.5rem;
+    text-align: left;
 }
 
 .box li {
-    margin-bottom: 0.5rem;
+    margin: 0.6rem 0;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.box li::before {
+    content: "•";
+    color: #1C3B57;
+    position: absolute;
+    left: 0;
 }
 
 .box a {
-    color: #4682b4;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.box a:hover {
+    color: #1A5276;
     text-decoration: underline;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: color 0.2s ease;
 }
 
-/* --- Aside Card Module Container Details --- */
-aside {
-    width: 20rem;
-    /* Fixed block assignment width layout parameter */
-    margin: 1rem auto;
-    border: 1px solid rgb(0 0 0 / 0.2);
-    /* Transparent alpha shading method */
-    padding: 1rem;
-    background-color: #eeeeee;
-    color: #333333;
+.box a:hover,
+.box a:focus {
+    color: #11334F;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   9. GLOBAL PAGE STRUCTURAL FOOTER & LIVE DATETIME MODULE
+   ========================================================================== */
+footer {
     text-align: center;
-    border-radius: 6px;
-    height: fit-content;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    border-top: 1px solid #333333;
+    font-size: 1rem;
+    margin-top: 2rem;
+    line-height: 1.4;
 }
 
-aside h2 {
-    border-bottom: 2px solid #4682b4;
-    padding-bottom: 0.5rem;
+.footer-datetime {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1C3B57;
+    margin-top: 0.55rem;
+    line-height: 1.4;
+    text-align: center;
 }
 
-figure {
-    margin: 1rem 0;
-}
-
-aside img {
-    width: 200px;
-    height: auto;
-    /* Height auto protects image aspect ratios from distortion */
-    border-radius: 4px;
-}
-
-figcaption {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: #555555;
-    margin-top: 0.5rem;
-}
-
-/* ==========================================
-   4. DESKTOP ADAPTATIONS (min-width: 768px)
-   ========================================== */
-@media (min-width: 768px) {
-    .header-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    nav {
-        width: auto;
-        justify-content: flex-end;
-    }
-
-    .main-layout {
-        grid-template-columns: 2.2fr 1fr;
-    }
-
-    .bio-wrapper {
-        flex-direction: row;
-        align-items: flex-start;
+/* ==========================================================================
+   10. LIQUID RESPONSIVE MOBILE VIEWPORT CONTROLS
+   ========================================================================== */
+@media screen and (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
 
     aside {
-        margin: 0 1rem 1rem 1rem;
+        width: 100%;
+        grid-column: 1 / 2;
+        grid-row: auto;
+        margin: 1rem 0;
     }
-}
 
-/* ==========================================
-   5. FOOTER PROPERTIES
-   ========================================== */
-footer {
-    margin-top: 15px;
-    /* Adds top margin spacing to cleanly clear page content above */
-    border-top: 1px solid #000000;
-    /* Adds a clean top border distinct formatting layer */
-    text-align: center;
-    /* Enforces baseline horizontal text-centering */
-    padding: 1.5rem 0;
-    font-size: 0.95rem;
+    main {
+        grid-column: 1 / 2;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bio-wrapper img {
+        float: none;
+        display: block;
+        margin: 0 auto 1.5rem auto;
+    }
 }

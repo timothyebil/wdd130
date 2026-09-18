@@ -11,10 +11,10 @@
       content="Timothy Ebil's WDD 130 home page featuring localized cultural information about Oyam District, Northern Uganda alongside foundational web layout assignments.">
     <meta name="author" content="Timothy Ebil">
 
-    <!-- FIXED: Corrected absolute font resource preconnect and spreadsheet pipelines -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Absolute font resource preconnect pipelines preventing rendering blocks -->
+    <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    <link href="https://googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet">
 
     <!-- Presentation Pipeline Link -->
@@ -24,27 +24,37 @@
 <body>
     <header>
         <div class="header-container">
-            <h1>Timothy Ebil | WDD 130 </h1>
-            <nav>
+            <nav aria-label="Primary Navigation">
                 <a href="#" class="active">Home</a>
                 <a href="wwr/">Rafting Website</a>
+                <a href="siteplan.html">Siteplan</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
             </nav>
         </div>
     </header>
 
     <!-- Structural Grid Layout Wrapper Container -->
-    <div class="main-layout">
+    <div class="grid">
         <main>
+            <h1>Timothy Ebil | WDD 130</h1>
+
             <section class="profile-card">
-                <h2>Student Profile</h2>
                 <div class="bio-wrapper">
-                    <img src="images/profile.jpg" alt="Portrait photo of Timothy Ebil" width="200"
-                      height="150" class="profile-img">
-                    <p>Hello! I am from Oyam District, Northern Uganda. I love infrastructure
-                        development, architectural planning, ict in education for peace and
-                        traveling. I am currently studying Web Design
-                        and Development at BYU-Pathway to engineer high-performance, accessible
-                        software interfaces.</p>
+                    <!-- FIXED: Added explicit dimension locks, smooth loading triggers, and alt safety keys -->
+                    <img src="images/profile.jpg" alt="Portrait photo of Timothy Ebil" width="150"
+                      height="200" class="profile-img" loading="eager">
+                    <p>Hello! I am from Oyam District, Northern Uganda. I am a dedicated
+                        professional
+                        with comprehensive experience in IT architecture, systems integration, and
+                        professional
+                        project management. I am passionate about infrastructure design,
+                        architectural planning, regional agribusiness investments, and leveraging
+                        ICT systems in education to build long-term foundations for community peace.
+                        I am currently studying Software Development at BYU-Pathway to engineer
+                        high-performance, highly accessible cloud and web software interfaces that
+                        solve tangible
+                        real-world infrastructure challenges across sustainable public networks.</p>
                 </div>
             </section>
 
@@ -57,34 +67,46 @@
                     <li><a href="https://churchofjesuschrist.org" target="_blank"
                           rel="noopener">Paris France Temple</a></li>
                     <li><a href="https://churchofjesuschrist.org" target="_blank"
-                          rel="noopener">Lima Peru Los Olivos Temple</a></li>
+                          rel="noopener">Berlin Germany Temple</a></li>
                 </ul>
             </section>
         </main>
 
         <aside>
-            <h2>Oyam District, Uganda</h2>
             <figure>
-                <img src="images/northern_uganda_01.jpg"
-                  alt="Scenic view of the savanna landscape in Oyam District" width="400"
-                  height="225" class="landscape-img">
-                <figcaption>The beautiful savanna of Northern Uganda.</figcaption>
+                <div class="aside-image-container">
+                    <img src="images/northern_uganda_01.jpg"
+                      alt="Scenic view of the savanna landscape in Oyam District near the Nile basin"
+                      width="400" height="225" class="landscape-img" loading="lazy">
+                    <span class="aside-image-label">Uganda</span>
+                </div>
+                <figcaption>"Oyam District is located within Northern Uganda, bordering Murchison
+                    Falls National Park. It is widely celebrated across the region for its expansive
+                    savanna horizons, rich cultural heritage, and robust agricultural
+                    resourcefulness." - wiki</figcaption>
             </figure>
-            <p>Oyam District is located within Northern Uganda, bordering Murchison Falls National
-                Park. It is widely celebrated across the region for its expansive savanna horizons,
-                rich cultural heritage, and robust agricultural resourcefulness.</p>
         </aside>
     </div>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Uganda | Last Modified: <span
-              id="lastModified"></span></p>
+        <p>&copy; <span id="currentyear"></span> 🌴 Timothy Ebil 🌴 Oyam, Uganda</p>
+        <p class="footer-datetime">Current Session: <span id="currentDateTime"></span></p>
     </footer>
 
     <!-- Native Dynamic Document Metrics Script Execution -->
     <script>
-        document.getElementById("currentyear").textContent = new Date().getFullYear();
-        document.getElementById("lastModified").textContent = document.lastModified;
+        const yearSpan = document.getElementById("currentyear");
+        const dateTimeSpan = document.getElementById("currentDateTime");
+        const now = new Date();
+
+        yearSpan.textContent = now.getFullYear();
+
+        const options = {
+            year: 'numeric', month: 'long', day: 'numeric',
+            hour: '2-digit', minute: '2-digit', second: '2-digit',
+            hour12: true
+        };
+        dateTimeSpan.textContent = now.toLocaleDateString('en-US', options);
     </script>
 </body>
 

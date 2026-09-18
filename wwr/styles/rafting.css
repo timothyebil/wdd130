@@ -1,0 +1,167 @@
+/* ==========================================
+   1. VARIABLES & COLOR SCHEME 
+   ========================================== */
+:root {
+    --primary-color: #0b5345;
+    /* Forest Teal Green */
+    --secondary-color: #e67e22;
+    /* Life Jacket Orange Accent */
+    --accent1-color: #1b263b;
+    /* Dark Slate Blue */
+    --accent2-color: #f7dc6f;
+    /* Sun Yellow Accent */
+    --heading-font: "Times New Roman", "Georgia", serif;
+    --body-font: Arial, Helvetica, sans-serif;
+    --white: #ffffff;
+}
+
+/* ==========================================
+   2. BOX-MODEL RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    background-color: #f8f9fa;
+}
+
+/* Limit page container boundary metrics for desktop alignment */
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* Clear visual text-decoration underlines from social image hyperlinks */
+.socialmedia a {
+    text-decoration: none;
+}
+
+/* Header Flexbox Alignment */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 16px;
+}
+
+header img {
+    max-height: 70px;
+    width: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    display: block;
+}
+
+header nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Footer Element Configuration */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    padding: 20px 16px;
+    margin-top: 40px;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
+}
+
+.socialmedia img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.15);
+}
+
+/* ==========================================
+   3. HERO IMAGE LAYOUT WITH ABSOLUTE OVERLAYS
+   ========================================== */
+.hero {
+    position: relative;
+}
+
+.hero > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Absolute Banner Heading Overlay positioning */
+h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.7;
+    background-color: var(--accent1-color);
+    color: var(--white);
+}
+
+/* Absolute Article Card Overlay positioning */
+.hero article {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+/* Right floating image inside absolute container */
+.hero article img {
+    float: right;
+    width: 125px;
+    margin-left: 15px;
+    border-radius: 4px;
+}
+
+/* Clear alignment physics inside float containers */
+.hero article::after {
+    content: "";
+    display: table;
+    clear: both;
+}

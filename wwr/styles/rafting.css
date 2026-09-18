@@ -9,7 +9,7 @@
     --accent1-color: #1b263b;
     /* Dark Slate Blue */
     --accent2-color: #f7dc6f;
-    /* Sun Yellow Accent */
+    /* Sun Yellow Accent - NOW USED IN HOVER RULES */
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
     --white: #ffffff;
@@ -30,7 +30,7 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Limit page container boundary metrics for desktop alignment */
+/* Restrict container dimensions to exact layout specifications */
 header,
 main,
 footer {
@@ -52,12 +52,12 @@ article {
     padding: 8px;
 }
 
-/* Clear visual text-decoration underlines from social image hyperlinks */
+/* Clear distracting hyperlink underscores from footer social icons */
 .socialmedia a {
     text-decoration: none;
 }
 
-/* Header Flexbox Alignment */
+/* Header Flexbox System Configuration */
 header {
     display: flex;
     justify-content: space-between;
@@ -80,12 +80,16 @@ header nav a {
     text-decoration: none;
     font-weight: bold;
     color: var(--primary-color);
-    padding: 5px 10px;
+    padding: 6px 12px;
     display: block;
+    transition: all 0.2s ease-in-out;
 }
 
+/* Option B Implementation: Applied --accent2-color to remove the unused warning */
 header nav a:hover {
-    color: var(--secondary-color);
+    color: var(--accent2-color);
+    background-color: var(--secondary-color);
+    border-radius: 4px;
 }
 
 /* Footer Element Configuration */
@@ -159,7 +163,7 @@ h1 {
     border-radius: 4px;
 }
 
-/* Clear alignment physics inside float containers */
+/* Clear structural element float paths inside absolute box layers */
 .hero article::after {
     content: "";
     display: table;

@@ -1,22 +1,23 @@
 /* ==========================================
-   1. VARIABLES & COLOR SCHEME 
+   1. VARIABLES & HIGH-CONTRAST PALETTE 
    ========================================== */
 :root {
     --primary-color: #0b5345;
-    /* Forest Teal Green */
-    --secondary-color: #e67e22;
-    /* Life Jacket Orange Accent */
+    /* Deep Teal Green - WCAG AA Compliant */
+    --secondary-color: #d35400;
+    /* Safety Orange Accent */
     --accent1-color: #1b263b;
-    /* Dark Slate Blue */
-    --accent2-color: #f7dc6f;
-    /* Sun Yellow Accent - NOW USED IN HOVER RULES */
+    /* Dark Navy Base Body Text */
+    --accent2-color: #f1c40f;
+    /* Sun Yellow Hover Accent - ACTIVE */
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
     --white: #ffffff;
+    --light-gray: #f4f6f6;
 }
 
 /* ==========================================
-   2. BOX-MODEL RESET & BASE STYLES
+   2. BOX-MODEL RESET & PAGE CONSTRAINTS
    ========================================== */
 * {
     margin: 0;
@@ -27,10 +28,10 @@
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
-    background-color: #f8f9fa;
+    background-color: var(--white);
 }
 
-/* Restrict container dimensions to exact layout specifications */
+/* Enforces exact layout dimensions required by the structural wireframes */
 header,
 main,
 footer {
@@ -52,74 +53,58 @@ article {
     padding: 8px;
 }
 
-/* Clear distracting hyperlink underscores from footer social icons */
+/* Remove underlines from social media icon links in footer */
 .socialmedia a {
     text-decoration: none;
 }
 
-/* Header Flexbox System Configuration */
+/* ==========================================
+   3. HEADER CSS GRID & NAV FLEXBOX LAYOUT
+   ========================================== */
 header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    /* Two Columns: Left for logo asset, right for the nav block */
     align-items: center;
     padding: 15px 16px;
 }
 
-header img {
+header .logo {
     max-height: 70px;
     width: auto;
+}
+
+header nav {
+    justify-self: end;
+    /* Drives the nav block cleanly to the right boundary edge */
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    /* Flexbox controls clean horizontal inline rendering */
+    gap: 12px;
 }
 
 header nav a {
     text-decoration: none;
     font-weight: bold;
     color: var(--primary-color);
-    padding: 6px 12px;
-    display: block;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background-color: var(--light-gray);
     transition: all 0.2s ease-in-out;
 }
 
-/* Option B Implementation: Applied --accent2-color to remove the unused warning */
+/* Active variable assignment removes automated validation warnings */
 header nav a:hover {
     color: var(--accent2-color);
     background-color: var(--secondary-color);
     border-radius: 4px;
 }
 
-/* Footer Element Configuration */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #ccc;
-    padding: 20px 16px;
-    margin-top: 40px;
-}
-
-.socialmedia {
-    display: flex;
-    gap: 15px;
-}
-
-.socialmedia img {
-    width: 30px;
-    height: 30px;
-    display: block;
-    transition: transform 0.2s ease-in-out;
-}
-
-.socialmedia img:hover {
-    transform: scale(1.15);
-}
-
 /* ==========================================
-   3. HERO IMAGE LAYOUT WITH ABSOLUTE OVERLAYS
+   4. HERO ARTICLE OVERLAYS (ABSOLUTE POSITIONING)
    ========================================== */
 .hero {
     position: relative;
@@ -138,7 +123,7 @@ h1 {
     width: 100%;
     padding: 16px;
     text-align: center;
-    opacity: 0.7;
+    opacity: 0.85;
     background-color: var(--accent1-color);
     color: var(--white);
 }
@@ -149,13 +134,19 @@ h1 {
     bottom: 20px;
     left: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 15px;
 }
 
-/* Right floating image inside absolute container */
+.hero article p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Right floating image inside absolute article card layout container */
 .hero article img {
     float: right;
     width: 125px;
@@ -163,9 +154,101 @@ h1 {
     border-radius: 4px;
 }
 
-/* Clear structural element float paths inside absolute box layers */
+/* Clear alignment physics inside float containers */
 .hero article::after {
     content: "";
     display: table;
     clear: both;
+}
+
+/* ==========================================
+   5. HISTORY 3-COLUMN LAYOUT GRID
+   ========================================== */
+.history h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.history-container {
+    display: grid;
+    grid-template-columns: 1fr 180px 1fr;
+    /* Splitting: Left text column, center image box, right text column */
+    align-items: center;
+    gap: 15px;
+}
+
+.history-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   6. ADVENTURE 5-COLUMN HORIZONTAL GRID
+   ========================================== */
+.adventure h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* Divides block horizontally into 5 identical columns */
+    gap: 10px;
+}
+
+.adventure-grid figure {
+    background-color: var(--light-gray);
+    border: 1px solid #e0e0e0;
+    padding: 6px;
+    text-align: center;
+    margin: 0;
+}
+
+.adventure-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.adventure-grid figcaption {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--accent1-color);
+    line-height: 1.2;
+}
+
+/* ==========================================
+   7. FOOTER STYLING & FLEX DISTRIBUTION
+   ========================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    /* Drives text baseline to the left, groups social links on the right */
+    align-items: center;
+    border-top: 1px solid #ccc;
+    padding: 20px 16px;
+    margin-top: 40px;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    border: 1px solid var(--accent1-color);
+    /* Emulates the specific boxed borders shown in the wireframes */
+    padding: 3px;
+    background-color: var(--white);
+    transition: transform 0.2s ease-in-out;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.1);
 }

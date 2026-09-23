@@ -1,5 +1,5 @@
 /* ==========================================
-   1. VARIABLES & HIGH-CONTRAST PALETTE 
+   1. VARIABLES & HEX COLOR SCHEME (Global Theme)
    ========================================== */
 :root {
     --primary-color: #0b5345;
@@ -9,11 +9,13 @@
     --accent1-color: #1b263b;
     /* Dark Navy Base Body Text */
     --accent2-color: #f1c40f;
-    /* Sun Yellow Hover Accent - ACTIVE */
+    /* Sun Yellow Hover Accent */
+    --white: #ffffff;
+    --light-purple: #dcd6f7;
+    /* Wireframe Header/Footer Background Tint */
+    --light-gray: #f4f6f6;
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
-    --white: #ffffff;
-    --light-gray: #f4f6f6;
 }
 
 /* ==========================================
@@ -31,18 +33,18 @@ body {
     background-color: var(--white);
 }
 
-/* Enforces exact layout dimensions required by the structural wireframes */
+/* Fixed layouts boundaries centered on desktop displays */
 header,
 main,
 footer {
     width: 840px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 h1,
 h2 {
     font-family: var(--heading-font);
-    color: var(--primary-color);
+    color: var(--accent1-color);
 }
 
 nav,
@@ -53,7 +55,6 @@ article {
     padding: 8px;
 }
 
-/* Remove underlines from social media icon links in footer */
 .socialmedia a {
     text-decoration: none;
 }
@@ -63,51 +64,55 @@ article {
    ========================================== */
 header {
     display: grid;
-    grid-template-columns: 140px 1fr;
-    /* Two Columns: Left for logo asset, right for the nav block */
+    grid-template-columns: 1fr auto;
+    /* Separates the logo image from navigation bars */
     align-items: center;
-    padding: 15px 16px;
+    background-color: var(--light-purple);
+    padding: 25px;
+    border: 1px solid #777777;
 }
 
 header .logo {
-    max-height: 70px;
+    max-height: 80px;
     width: auto;
+    background-color: #cccccc;
+    padding: 5px;
 }
 
 header nav {
-    justify-self: end;
-    /* Drives the nav block cleanly to the right boundary edge */
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    /* Flexbox controls clean horizontal inline rendering */
-    gap: 12px;
+    /* Flexbox aligns lists horizontally inline */
+    gap: 10px;
 }
 
 header nav a {
     text-decoration: none;
     font-weight: bold;
-    color: var(--primary-color);
-    padding: 8px 16px;
-    border: 1px solid #ccc;
-    background-color: var(--light-gray);
+    color: #333333;
+    padding: 10px 20px;
+    border: 1px solid #777777;
+    background-color: var(--white);
     transition: all 0.2s ease-in-out;
 }
 
-/* Active variable assignment removes automated validation warnings */
 header nav a:hover {
     color: var(--accent2-color);
     background-color: var(--secondary-color);
-    border-radius: 4px;
+    border-color: var(--secondary-color);
 }
 
 /* ==========================================
-   4. HERO ARTICLE OVERLAYS (ABSOLUTE POSITIONING)
+   4. HERO CONTAINER POSITIONING WITH OVERLAYS
    ========================================== */
 .hero {
     position: relative;
+    border: 2px solid #333333;
 }
 
 .hero > img {
@@ -117,44 +122,46 @@ header nav a:hover {
 }
 
 /* Absolute Banner Heading Overlay positioning */
-h1 {
+.hero h1 {
     position: absolute;
-    top: 20px;
+    top: 15px;
     width: 100%;
-    padding: 16px;
+    padding: 10px;
     text-align: center;
-    opacity: 0.85;
-    background-color: var(--accent1-color);
-    color: var(--white);
+    font-size: 2.2rem;
+    background: none;
+    color: #333333;
 }
 
 /* Absolute Article Card Overlay positioning */
 .hero article {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    bottom: 25px;
+    left: 35px;
+    right: 35px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #777777;
     padding: 15px;
 }
 
 .hero article p {
     margin: 0;
     padding: 0;
-    line-height: 1.5;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    width: 82%;
+    float: left;
 }
 
-/* Right floating image inside absolute article card layout container */
+/* Right floating image inside absolute container */
 .hero article img {
     float: right;
-    width: 125px;
-    margin-left: 15px;
-    border-radius: 4px;
+    width: 13%;
+    height: auto;
+    border: 1px solid #777777;
+    background-color: #cccccc;
 }
 
-/* Clear alignment physics inside float containers */
 .hero article::after {
     content: "";
     display: table;
@@ -164,44 +171,67 @@ h1 {
 /* ==========================================
    5. HISTORY 3-COLUMN LAYOUT GRID
    ========================================== */
+.history {
+    background-color: var(--light-gray);
+    border: 1px solid #777777;
+    padding: 20px;
+}
+
 .history h2 {
     text-align: center;
+    font-size: 1.8rem;
     margin-bottom: 12px;
 }
 
 .history-container {
     display: grid;
-    grid-template-columns: 1fr 180px 1fr;
-    /* Splitting: Left text column, center image box, right text column */
-    align-items: center;
-    gap: 15px;
+    grid-template-columns: 1fr 200px 1fr;
+    /* Splitting: Text, Center Image, Text */
+    align-items: start;
+    gap: 20px;
+}
+
+.history-container p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 
 .history-img {
     width: 100%;
     height: auto;
+    border: 1px solid #777777;
+    background-color: #333333;
     border-radius: 4px;
 }
 
 /* ==========================================
    6. ADVENTURE 5-COLUMN HORIZONTAL GRID
    ========================================== */
+.adventure {
+    background-color: var(--light-gray);
+    border: 1px solid #777777;
+    padding: 20px;
+    margin-top: 30px;
+}
+
 .adventure h2 {
     text-align: center;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
 .adventure-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* Divides block horizontally into 5 identical columns */
-    gap: 10px;
+    /* 5 Column inline panels split */
+    gap: 15px;
 }
 
 .adventure-grid figure {
-    background-color: var(--light-gray);
-    border: 1px solid #e0e0e0;
-    padding: 6px;
+    background-color: transparent;
+    padding: 0;
     text-align: center;
     margin: 0;
 }
@@ -209,46 +239,240 @@ h1 {
 .adventure-grid img {
     width: 100%;
     height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     display: block;
     margin-bottom: 6px;
+    border: 1px solid #777777;
+    background-color: #cccccc;
 }
 
 .adventure-grid figcaption {
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--accent1-color);
+    font-size: 0.9rem;
+    color: #333333;
     line-height: 1.2;
 }
 
 /* ==========================================
-   7. FOOTER STYLING & FLEX DISTRIBUTION
+   7. FOOTER WIREFRAME STYLING
    ========================================== */
 footer {
-    display: flex;
-    justify-content: space-between;
-    /* Drives text baseline to the left, groups social links on the right */
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    border-top: 1px solid #ccc;
-    padding: 20px 16px;
-    margin-top: 40px;
+    background-color: var(--light-purple);
+    padding: 20px 25px;
+    border: 1px solid #777777;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    font-weight: bold;
 }
 
 .socialmedia {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 .socialmedia img {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
     display: block;
-    border: 1px solid var(--accent1-color);
-    /* Emulates the specific boxed borders shown in the wireframes */
-    padding: 3px;
+    border: 1px solid #333333;
+    /* Renders the explicit cross-line boxes from wireframe */
     background-color: var(--white);
+    padding: 4px;
     transition: transform 0.2s ease-in-out;
 }
 
 .socialmedia img:hover {
     transform: scale(1.1);
+}
+
+/* ==========================================
+   8. W05 CONTACT US WIREFRAME LAYOUT STYLES
+   ========================================== */
+
+/* Company Header Text Group formatting */
+.company-heading {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.company-heading h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.company-heading p {
+    margin: 2px 0;
+    padding: 0;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+/* Two-Column Form Split Grid Layout */
+.contact-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 20px 16px;
+}
+
+/* Map frame wrapper */
+.map-container {
+    border: 1px solid #777777;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    display: block;
+    border: none;
+}
+
+/* Form block arrangement properties */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    /* Uniform text margins tracking lines */
+    align-items: center;
+}
+
+.form-item label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.form-item input,
+.form-item textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #777777;
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+
+/* Radio Button Options Grid alignment */
+.radio-group {
+    border: none;
+    margin: 5px 0;
+    padding: 0;
+}
+
+.radio-group legend {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding-left: 80px;
+    /* Aligns options directly with inputs column line drop */
+}
+
+.radio-option input[type="radio"] {
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.radio-option label {
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* Checkbox element alignment properties */
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+    padding-left: 80px;
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Custom Call-to-Action Submit button styling */
+.form-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--light-gray);
+    color: #333333;
+    border: 1px solid #777777;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-submit-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-color: var(--secondary-color);
+}
+
+/* Employee bottom grid sections */
+.employee-section {
+    border-top: 1px solid #777777;
+    padding-top: 20px;
+    margin-top: 40px;
+}
+
+.employee-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.employee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 Profiles panel structures side by side */
+    gap: 20px;
+}
+
+.employee-grid figure {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.employee-grid img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Uniform round profile rings per wireframe sketches */
+    border: 1px solid #777777;
+    background-color: #cccccc;
+    margin-bottom: 12px;
+}
+
+.employee-grid figcaption {
+    font-size: 0.95rem;
+    color: #333333;
+    line-height: 1.4;
 }

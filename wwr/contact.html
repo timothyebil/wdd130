@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+      content="Get in touch with Splashdown Rafting Company. Contact our adventure guides for reservations, general inquiries, and canyon base locations.">
+    <meta name="author" content="Timothy Ebil">
+    <title>Contact Splashdown Rafting Company - Plan Your Adventure</title>
+    <link rel="stylesheet" href="styles/rafting.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="Splashdown Rafting Site Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="trips.html">Trips</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Company Information Group -->
+        <section class="company-heading">
+            <h1>White Water Rafting Company</h1>
+            <p class="company-address">123 Main River Street</p>
+            <p class="company-location">Kolob, California</p>
+            <p class="company-phone">+1 999 999 9999</p>
+            <p class="company-email">info@whitewater.com</p>
+        </section>
+
+        <!-- Two-Column Wireframe Split: Map and Form -->
+        <div class="contact-layout-grid">
+            <div class="map-container">
+                <!-- Embedded Google Map Frame - inline border styles fully stripped -->
+                <iframe src="https://google.com" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="form-container">
+                <form action="#" method="post">
+                    <div class="form-item">
+                        <label for="username">Name</label>
+                        <input type="text" id="username" name="username" required
+                          placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-item">
+                        <label for="useremail">Email</label>
+                        <input type="email" id="useremail" name="useremail" required
+                          placeholder="name@example.com">
+                    </div>
+
+                    <!-- Message Purpose Selection Radio Array -->
+                    <fieldset class="radio-group">
+                        <legend>Message Purpose</legend>
+                        <div class="radio-option">
+                            <input type="radio" id="inquiry" name="purpose" value="general" checked>
+                            <label for="inquiry">General Inquiry</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="reservation" name="purpose" value="reservation">
+                            <label for="reservation">Reservation Question</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="suggestion" name="purpose" value="suggestion">
+                            <label for="suggestion">Website Suggestion</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-item">
+                        <label for="usermessage">Message</label>
+                        <textarea id="usermessage" name="usermessage" rows="5" required
+                          placeholder="Type here"></textarea>
+                    </div>
+
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="subscribe">
+                        <label for="newsletter">Please subscribe me to the monthly
+                            newsletter</label>
+                    </div>
+
+                    <!-- Visual, distinguishable submission button text -->
+                    <button type="submit" class="form-submit-btn">Get in Touch!</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Employee Recognition Profiles Section -->
+        <section class="employee-section">
+            <h2>We Are Here to Serve You</h2>
+            <div class="employee-grid">
+                <figure>
+                    <img src="images/employee1.jpg"
+                      alt="Photo of John Doe, Lead River Expedition Guide">
+                    <figcaption><strong>John Doe</strong><br>Employee Profile</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/employee2.jpg"
+                      alt="Photo of Jane Smith, Safety Logistics Coordinator">
+                    <figcaption><strong>Jane Smith</strong><br>Employee Profile</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/employee3.jpg" alt="Photo of Alex Jones, Operations Manager">
+                    <figcaption><strong>Alex Jones</strong><br>Employee Profile</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Splashdown Rafting Company – Timothy Ebil</p>
+        <nav class="socialmedia">
+            <a href="https://facebook.com" target="_blank"><img src="images/facebook-icon.png"
+                  alt="Visit Splashdown Rafting on our official Facebook profile page"></a>
+            <a href="https://twitter.com" target="_blank"><img src="images/twitter-icon.png"
+                  alt="Visit Splashdown Rafting on our official Twitter status page"></a>
+            <a href="https://instagram.com" target="_blank"><img src="images/instagram-icon.png"
+                  alt="Visit Splashdown Rafting on our official Instagram media page"></a>
+        </nav>
+    </footer>
+</body>
+
+</html>

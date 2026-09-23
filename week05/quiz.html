@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS Quiz | Timothy Ebil</title>
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+
+<body>
+    <header>
+        <h1>HTML and CSS Web Development Quiz</h1>
+        <p>Submitted by: Timothy Ebil</p>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <!-- Question 1: Text Input -->
+            <div class="form-group">
+                <label for="q1">1. What does the acronym "CSS" stand for?</label>
+                <input type="text" id="q1" name="q1" required placeholder="Type your answer here">
+            </div>
+
+            <!-- Question 2: Textarea -->
+            <div class="form-group">
+                <label for="q2">2. Explain the main difference between an ID selector and a Class
+                    selector in CSS.</label>
+                <textarea id="q2" name="q2" rows="4" required
+                  placeholder="Write your explanation here..."></textarea>
+            </div>
+
+            <!-- Question 3: Select Dropdown -->
+            <div class="form-group">
+                <label for="q3">3. Which HTML element is used to define the most important heading
+                    in a document?</label>
+                <select id="q3" name="q3" required>
+                    <option value="" selected disabled>Choose One ...</option>
+                    <option value="head"><span>&lt;</span>head<span>&gt;</span></option>
+                    <option value="h1"><span>&lt;</span>h1<span>&gt;</span></option>
+                    <option value="header"><span>&lt;</span>header<span>&gt;</span></option>
+                </select>
+            </div>
+
+            <!-- Question 4: Number Input -->
+            <div class="form-group">
+                <label for="q4">4. How many structural layers (HTML, CSS, JavaScript) make up
+                    standard frontend web development?</label>
+                <input type="number" id="q4" name="q4" min="1" max="10" required
+                  placeholder="e.g., 3">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 | Timothy Ebil | WDD130</p>
+    </footer>
+</body>
+
+</html>

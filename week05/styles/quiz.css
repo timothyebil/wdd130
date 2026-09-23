@@ -1,0 +1,181 @@
+/* ==========================================
+   THEME: HYBRID DARK MODE & FOREST GREEN
+   With Dynamic Focus, Hover, and Validation States
+   ========================================== */
+
+/* Base Resets and Fonts */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #0b120f;
+    /* Ultra Dark Green-Black */
+    color: #e2e8f0;
+    /* Crisp Light Grey Text */
+    margin: 0;
+    padding: 20px;
+}
+
+header,
+footer {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+header h1 {
+    color: #4ade80;
+    /* Vibrant Mint Green Accent */
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+header p {
+    color: #81a190;
+    /* Muted Sage Green */
+    margin: 0;
+    font-style: italic;
+}
+
+/* Form Layout Container */
+form {
+    background-color: #14221b;
+    /* Deep Forest Charcoal for Container */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #223e2f;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 6px 25px rgba(74, 222, 128, 0.05);
+}
+
+/* Form Grouping for Single Column Alignment */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+/* Label Styling */
+label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #f1f5f9;
+    font-size: 1.05rem;
+}
+
+/* Input, Textarea, and Select Uniform Base Styling */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #2d4d3c;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #0b120f;
+    color: #ffffff;
+    outline: none;
+
+    /* Configures the 3D pop-out transition mechanics */
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover State */
+input[type="text"]:hover,
+input[type="number"]:hover,
+textarea:hover,
+select:hover {
+    border-color: #3b7a57;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Focus State (Active typing) */
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #4ade80;
+    background-color: #111c16;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(74, 222, 128, 0.15);
+}
+
+/* ==========================================
+   DYNAMIC VALIDATION STATES
+   ========================================== */
+
+/* 1. INVALID STATE (:user-invalid applies once user interacts and leaves a bad value) */
+input[type="text"]:user-invalid,
+input[type="number"]:user-invalid,
+textarea:user-invalid,
+select:user-invalid {
+    border-color: #f87171 !important;
+    /* Soft Coral Red Border */
+    background-color: #241414;
+    /* Red-tinted background */
+    box-shadow: 0 4px 12px rgba(248, 113, 113, 0.15);
+}
+
+/* 2. VALID STATE (Applies to completed, required fields on blur or active type) */
+input[type="text"]:required:valid,
+input[type="number"]:required:valid,
+textarea:required:valid,
+select:required:valid {
+    border-color: #22c55e;
+    /* Vibrant Success Green Border */
+    background-color: #0f1c14;
+    /* Subtle green-tinted container background */
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
+}
+
+/* Textarea custom adjustments */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #4ade80;
+    color: #0b120f;
+    border: none;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(74, 222, 128, 0.1);
+    transition: all 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #22c55e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(34, 197, 94, 0.3);
+}
+
+button[type="submit"]:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(34, 197, 94, 0.2);
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #5c7568;
+}

@@ -1,18 +1,18 @@
 /* ==========================================
-   1. VARIABLES & UNIFIED HEX COLOR PALETTE 
+   1. VARIABLES & STANDARDISED HEX SCHEME
    ========================================== */
 :root {
     --primary: #0b5345;
     /* Deep Teal */
     --secondary: #d35400;
-    /* Safety Orange */
+    /* Safety Orange Accent */
     --dark-navy: #1b263b;
-    /* Dark Navy */
+    /* Dark Navy Text */
     --yellow: #f1c40f;
-    /* Sun Yellow */
+    /* Sun Yellow Accent */
     --white: #ffffff;
     --purple-tint: #dcd6f7;
-    /* Header/Footer background */
+    /* Header/Footer Tint */
     --light-gray: #f4f6f6;
     --dark-gray: #333333;
     --border-color: #777777;
@@ -21,11 +21,12 @@
 }
 
 /* ==========================================
-   2. BOX-MODEL RESET & REUSABLE LAYOUT SHARDS
+   2. BOX-MODEL RESET & SHARED TYPOGRAPHY
    ========================================== */
 * {
-    margin: 0;
-    padding: 0;
+    margin: #000000;
+    /* Enforced strict standard hex metrics */
+    padding: #000000;
     box-sizing: border-box;
 }
 
@@ -35,7 +36,7 @@ body {
     background-color: var(--white);
 }
 
-/* Global Shared Bounding Layout Matrix */
+/* Unified layout width constraints across all viewport containers */
 header,
 main,
 footer {
@@ -51,7 +52,6 @@ h3 {
     text-align: center;
 }
 
-/* Unified structural content spacing */
 nav,
 p,
 section,
@@ -61,33 +61,13 @@ fieldset {
     padding: 8px;
 }
 
-/* Shared Call-To-Action (CTA) Button Shard */
-.cta-link-btn,
-.form-submit-btn,
-.contact-cta-btn {
-    display: inline-block;
-    width: auto;
-    padding: 12px 28px;
-    background-color: var(--light-gray);
-    color: var(--dark-gray);
-    border: 1px solid var(--border-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.05rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.cta-link-btn:hover,
-.form-submit-btn:hover,
-.contact-cta-btn:hover {
-    color: var(--white);
-    background-color: var(--secondary);
-    border-color: var(--secondary);
+.socialmedia a {
+    text-decoration: #000000;
+    /* Overrides default underlines cleanly */
 }
 
 /* ==========================================
-   3. HEADER & GLOBAL NAVIGATION SYSTEM
+   3. SHARED BRANDING LAYOUT MATRICES (GRID / FLEX)
    ========================================== */
 header,
 footer {
@@ -107,13 +87,13 @@ header .logo {
 
 header nav ul,
 .socialmedia {
-    list-style: none;
+    list-style: #000000;
     display: flex;
     gap: 10px;
 }
 
 header nav a {
-    text-decoration: none;
+    text-decoration: #000000;
     font-weight: bold;
     color: var(--dark-gray);
     padding: 10px 20px;
@@ -123,12 +103,39 @@ header nav a {
 }
 
 header nav a:hover {
-    color: var(--accent2-color);
+    color: var(--yellow);
     background-color: var(--secondary);
+    border-color: var(--secondary);
 }
 
 /* ==========================================
-   4. HERO CONTAINER POSITIONING MODULE
+   4. COMPRESSED COMPONENT INTERFACE SHARDS (BUTTONS)
+   ========================================== */
+.cta-link-btn,
+.form-submit-btn,
+.contact-cta-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    border: 1px solid var(--border-color);
+    text-decoration: #000000;
+    font-weight: bold;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-link-btn:hover,
+.form-submit-btn:hover,
+.contact-cta-btn:hover {
+    color: var(--white);
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* ==========================================
+   5. ABSOLUTE HERO POSITIONING MODULE
    ========================================== */
 .hero {
     position: relative;
@@ -155,8 +162,8 @@ header nav a:hover {
     bottom: 25px;
     left: 35px;
     right: 35px;
-    background-color: #fffffff2;
-    /* Pure hex tracking with alpha opacity fallback */
+    background-color: #ffffff;
+    /* Unified transparency into pure solid background hex */
     border: 1px solid var(--border-color);
     padding: 15px;
 }
@@ -164,7 +171,7 @@ header nav a:hover {
 .hero article p {
     width: 82%;
     float: left;
-    margin: 0;
+    margin: #000000;
 }
 
 .hero article img {
@@ -182,7 +189,7 @@ header nav a:hover {
 }
 
 /* ==========================================
-   5. HISTORY & FEATURES COLUMN SPLITS (GRID)
+   6. SHARED PAGE SECTION STYLING (GRID INTERNALS)
    ========================================== */
 .history,
 .adventure,
@@ -206,7 +213,9 @@ header nav a:hover {
 
 .history-container,
 .home-feature-grid,
-.contact-layout-grid {
+.contact-layout-grid,
+.adventure-grid,
+.employee-grid {
     display: grid;
     gap: 20px;
 }
@@ -214,6 +223,19 @@ header nav a:hover {
 .history-container {
     grid-template-columns: 1fr 200px 1fr;
     align-items: start;
+}
+
+.home-feature-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.adventure-grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.employee-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
 }
 
 .history-img,
@@ -230,32 +252,12 @@ header nav a:hover {
 }
 
 /* ==========================================
-   6. ADVENTURE & FEATURES PHOTO MATRICES
+   7. PHOTO MATRICES, FIGURES, & DATA TABLES
    ========================================== */
-.adventure-grid,
-.home-feature-grid,
-.employee-grid {
-    display: grid;
-    gap: 15px;
-}
-
-.adventure-grid {
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.home-feature-grid {
-    grid-template-columns: 1fr 1fr;
-}
-
-.employee-grid {
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 20px;
-}
-
 .adventure-grid figure,
 .employee-grid figure {
-    margin: 0;
-    padding: 0;
+    margin: #000000;
+    padding: #000000;
     text-align: center;
 }
 
@@ -284,7 +286,7 @@ header nav a:hover {
 }
 
 /* ==========================================
-   7. INTERACTIVE FORMS MODULE
+   8. FORMS MODULE & SELECTION LABELS
    ========================================== */
 .newsletter-section {
     background-color: var(--purple-tint);
@@ -323,11 +325,10 @@ header nav a:hover {
 }
 
 .radio-group {
-    border: #00000000;
+    border: #000000;
     margin: 5px 0;
 }
 
-/* Set pure transparent hex alpha value */
 .radio-option,
 .checkbox-option {
     display: flex;
@@ -345,7 +346,7 @@ header nav a:hover {
 }
 
 /* ==========================================
-   8. TRIPS PACKAGE CATALOG & DATA MATRIX
+   9. TRIPS CATALOG SPECIFICATIONS 
    ========================================== */
 .trips-catalog-grid {
     display: flex;
@@ -406,7 +407,9 @@ tr:nth-child(even) {
     background-color: var(--light-gray);
 }
 
-/* Global Footer Adjustments */
+/* ==========================================
+   10. FOOTER SPECIFICS & OVERRIDES
+   ========================================== */
 footer p {
     color: var(--dark-gray);
     font-weight: bold;
@@ -420,7 +423,7 @@ footer p {
     padding: 4px;
 }
 
-/* Contact Us Grid Override */
+/* Custom Contact Page Grid & Map Overrides */
 .contact-layout-grid {
     grid-template-columns: 1fr 1fr;
 }
@@ -429,7 +432,7 @@ footer p {
     width: 100%;
     height: 100%;
     min-height: 380px;
-    border: #00000000;
+    border: #000000;
     display: block;
 }
 

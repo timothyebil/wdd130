@@ -1,25 +1,27 @@
 /* ==========================================
-   1. VARIABLES & HEX COLOR SCHEME (Global Theme)
+   1. VARIABLES & UNIFIED HEX COLOR PALETTE 
    ========================================== */
 :root {
-    --primary-color: #0b5345;
-    /* Deep Teal Green - WCAG AA Compliant */
-    --secondary-color: #d35400;
-    /* Safety Orange Accent */
-    --accent1-color: #1b263b;
-    /* Dark Navy Base Body Text */
-    --accent2-color: #f1c40f;
-    /* Sun Yellow Hover Accent */
+    --primary: #0b5345;
+    /* Deep Teal */
+    --secondary: #d35400;
+    /* Safety Orange */
+    --dark-navy: #1b263b;
+    /* Dark Navy */
+    --yellow: #f1c40f;
+    /* Sun Yellow */
     --white: #ffffff;
-    --light-purple: #dcd6f7;
-    /* Wireframe Header/Footer Background Tint */
+    --purple-tint: #dcd6f7;
+    /* Header/Footer background */
     --light-gray: #f4f6f6;
+    --dark-gray: #333333;
+    --border-color: #777777;
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
 
 /* ==========================================
-   2. BOX-MODEL RESET & PAGE CONSTRAINTS
+   2. BOX-MODEL RESET & REUSABLE LAYOUT SHARDS
    ========================================== */
 * {
     margin: 0;
@@ -29,11 +31,11 @@
 
 body {
     font-family: var(--body-font);
-    color: var(--accent1-color);
+    color: var(--dark-navy);
     background-color: var(--white);
 }
 
-/* Fixed layout margins centered on desktop displays */
+/* Global Shared Bounding Layout Matrix */
 header,
 main,
 footer {
@@ -45,75 +47,92 @@ h1,
 h2,
 h3 {
     font-family: var(--heading-font);
-    color: var(--accent1-color);
+    color: var(--dark-navy);
+    text-align: center;
 }
 
+/* Unified structural content spacing */
 nav,
 p,
 section,
-article {
+article,
+fieldset {
     margin: 16px;
     padding: 8px;
 }
 
-.socialmedia a {
+/* Shared Call-To-Action (CTA) Button Shard */
+.cta-link-btn,
+.form-submit-btn,
+.contact-cta-btn {
+    display: inline-block;
+    width: auto;
+    padding: 12px 28px;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    border: 1px solid var(--border-color);
     text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-link-btn:hover,
+.form-submit-btn:hover,
+.contact-cta-btn:hover {
+    color: var(--white);
+    background-color: var(--secondary);
+    border-color: var(--secondary);
 }
 
 /* ==========================================
-   3. HEADER CSS GRID & NAV FLEXBOX LAYOUT
+   3. HEADER & GLOBAL NAVIGATION SYSTEM
    ========================================== */
-header {
+header,
+footer {
     display: grid;
     grid-template-columns: 1fr auto;
-    /* Separates the logo asset column from the navigation bar */
     align-items: center;
-    background-color: var(--light-purple);
-    padding: 25px;
-    border: 1px solid #777777;
+    background-color: var(--purple-tint);
+    padding: 20px 25px;
+    border: 1px solid var(--border-color);
 }
 
 header .logo {
     max-height: 80px;
-    width: auto;
     background-color: #cccccc;
     padding: 5px;
 }
 
-header nav {
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul {
+header nav ul,
+.socialmedia {
     list-style: none;
     display: flex;
-    /* Controls inline horizontal row formatting */
     gap: 10px;
 }
 
 header nav a {
     text-decoration: none;
     font-weight: bold;
-    color: #333333;
+    color: var(--dark-gray);
     padding: 10px 20px;
-    border: 1px solid #777777;
+    border: 1px solid var(--border-color);
     background-color: var(--white);
     transition: all 0.2s ease-in-out;
 }
 
 header nav a:hover {
     color: var(--accent2-color);
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    background-color: var(--secondary);
 }
 
 /* ==========================================
-   4. HERO ARTICLE OVERLAYS (ABSOLUTE POSITIONING)
+   4. HERO CONTAINER POSITIONING MODULE
    ========================================== */
 .hero {
     position: relative;
-    border: 2px solid #333333;
+    border: 2px solid var(--dark-gray);
 }
 
 .hero > img {
@@ -122,334 +141,296 @@ header nav a:hover {
     height: auto;
 }
 
-/* Absolute Banner Heading Overlay positioning */
 .hero h1 {
     position: absolute;
     top: 15px;
     width: 100%;
     padding: 10px;
-    text-align: center;
     font-size: 2.2rem;
-    background: none;
-    color: #333333;
+    color: var(--dark-gray);
 }
 
-/* Absolute Article Card Overlay positioning */
 .hero article {
     position: absolute;
     bottom: 25px;
     left: 35px;
     right: 35px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 1px solid #777777;
+    background-color: #fffffff2;
+    /* Pure hex tracking with alpha opacity fallback */
+    border: 1px solid var(--border-color);
     padding: 15px;
 }
 
 .hero article p {
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
-    font-size: 0.9rem;
     width: 82%;
     float: left;
+    margin: 0;
 }
 
-/* Right floating image inside absolute article card layout container */
 .hero article img {
     float: right;
     width: 13%;
-    height: auto;
-    border: 1px solid #777777;
+    border: 1px solid var(--border-color);
     background-color: #cccccc;
 }
 
-/* Clear alignment physics inside float containers */
-.hero article::after {
+.hero article::after,
+.trip-card::after {
     content: "";
     display: table;
     clear: both;
 }
 
 /* ==========================================
-   5. HISTORY 3-COLUMN LAYOUT GRID (ABOUT US)
+   5. HISTORY & FEATURES COLUMN SPLITS (GRID)
    ========================================== */
-.history {
+.history,
+.adventure,
+.cta-banner,
+.newsletter-section,
+.employee-section,
+.trips-intro,
+.trips-table-section {
     background-color: var(--light-gray);
-    border: 1px solid #777777;
+    border: 1px solid var(--border-color);
     padding: 20px;
+    margin-top: 30px;
 }
 
-.history h2 {
-    text-align: center;
+.history h2,
+.adventure h2,
+.trips-table-section h2 {
+    margin-bottom: 15px;
     font-size: 1.8rem;
-    margin-bottom: 12px;
 }
 
-.history-container {
+.history-container,
+.home-feature-grid,
+.contact-layout-grid {
     display: grid;
-    grid-template-columns: 1fr 200px 1fr;
-    /* Left text, center image, right text */
-    align-items: start;
     gap: 20px;
 }
 
-.history-container p {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    font-size: 0.95rem;
+.history-container {
+    grid-template-columns: 1fr 200px 1fr;
+    align-items: start;
+}
+
+.history-img,
+.feature-card img,
+.adventure-grid img,
+.trip-card img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
 }
 
 .history-img {
-    width: 100%;
-    height: auto;
-    border: 1px solid #777777;
-    background-color: #333333;
-    border-radius: 4px;
+    background-color: var(--dark-gray);
 }
 
 /* ==========================================
-   6. ADVENTURE 5-COLUMN HORIZONTAL GRID (ABOUT US)
+   6. ADVENTURE & FEATURES PHOTO MATRICES
    ========================================== */
-.adventure {
-    background-color: var(--light-gray);
-    border: 1px solid #777777;
-    padding: 20px;
-    margin-top: 30px;
-}
-
-.adventure h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-.adventure-grid {
+.adventure-grid,
+.home-feature-grid,
+.employee-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* Divides block horizontally into 5 identical columns */
     gap: 15px;
 }
 
-.adventure-grid figure {
-    background-color: transparent;
+.adventure-grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.home-feature-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.employee-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+}
+
+.adventure-grid figure,
+.employee-grid figure {
+    margin: 0;
     padding: 0;
     text-align: center;
-    margin: 0;
 }
 
 .adventure-grid img {
-    width: 100%;
-    height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    display: block;
-    margin-bottom: 6px;
-    border: 1px solid #777777;
     background-color: #cccccc;
 }
 
-.adventure-grid figcaption {
-    font-size: 0.9rem;
-    color: #333333;
-    line-height: 1.2;
-}
-
-/* ==========================================
-   7. FOOTER STYLING & GRID DISTRIBUTION
-   ========================================== */
-footer {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    background-color: var(--light-purple);
-    padding: 20px 25px;
-    border: 1px solid #777777;
-    margin-top: 30px;
-}
-
-footer p {
-    margin: 0;
-    padding: 0;
-    color: #333333;
-    font-weight: bold;
-}
-
-.socialmedia {
-    display: flex;
-    gap: 10px;
-}
-
-.socialmedia img {
-    width: 35px;
-    height: 35px;
-    display: block;
-    border: 1px solid #333333;
-    /* Specific boxed borders from wireframes */
+.feature-card {
     background-color: var(--white);
-    padding: 4px;
-    transition: transform 0.2s ease-in-out;
+    border: 1px solid var(--border-color);
+    padding: 15px;
 }
 
-.socialmedia img:hover {
-    transform: scale(1.1);
+.feature-card img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--primary);
+    text-align: left;
 }
 
 /* ==========================================
-   8. CONTACT US WIREFRAME LAYOUT STYLES (CONTACT US)
+   7. INTERACTIVE FORMS MODULE
    ========================================== */
-.company-heading {
+.newsletter-section {
+    background-color: var(--purple-tint);
     text-align: center;
-    margin: 20px 0;
 }
 
-.company-heading h1 {
-    font-size: 2.2rem;
-    margin-bottom: 8px;
-}
-
-.company-heading p {
-    margin: 2px 0;
-    padding: 0;
-    font-size: 1.05rem;
-    font-weight: bold;
-}
-
-.contact-layout-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin: 20px 16px;
-}
-
-.map-container {
-    border: 1px solid #777777;
-    background-color: var(--light-gray);
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 380px;
-    display: block;
-    border: none;
-}
-
+.newsletter-form,
 .form-container form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
+.newsletter-form {
+    max-width: 450px;
+    margin: 15px auto 0 auto;
+}
+
 .form-item {
     display: grid;
     grid-template-columns: 80px 1fr;
-    /* Aligns input fields vertically */
     align-items: center;
 }
 
-.form-item label {
+.form-item label,
+.radio-group legend {
     font-weight: bold;
-    font-size: 1rem;
 }
 
 .form-item input,
 .form-item textarea {
     width: 100%;
     padding: 8px;
-    border: 1px solid #777777;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
-    font-family: var(--body-font);
-    font-size: 1rem;
 }
 
 .radio-group {
-    border: none;
+    border: #00000000;
     margin: 5px 0;
-    padding: 0;
 }
 
-.radio-group legend {
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-.radio-option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    padding-left: 80px;
-}
-
-.radio-option input[type="radio"] {
-    accent-color: var(--primary-color);
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
-
-.radio-option label {
-    cursor: pointer;
-    font-weight: normal;
-}
-
+/* Set pure transparent hex alpha value */
+.radio-option,
 .checkbox-option {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 5px 0;
     padding-left: 80px;
 }
 
-.checkbox-option input[type="checkbox"] {
+.radio-option input,
+.checkbox-option input {
     width: 16px;
     height: 16px;
-    accent-color: var(--primary-color);
+    accent-color: var(--primary);
     cursor: pointer;
 }
 
-.form-submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--light-gray);
-    color: #333333;
-    border: 1px solid #777777;
-    font-size: 1.05rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+/* ==========================================
+   8. TRIPS PACKAGE CATALOG & DATA MATRIX
+   ========================================== */
+.trips-catalog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.form-submit-btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    border-color: var(--secondary-color);
-}
-
-.employee-section {
-    border-top: 1px solid #777777;
-    padding-top: 20px;
-    margin-top: 40px;
-}
-
-.employee-section h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-}
-
-.employee-grid {
+.trip-card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: 240px 1fr;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
 }
 
-.employee-grid figure {
-    text-align: center;
-    margin: 0;
-    padding: 10px;
+.trip-card img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.trip-card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.trip-card-content h2 {
+    text-align: left;
+    color: var(--primary);
+}
+
+.table-scroller {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--purple-tint);
+    font-weight: bold;
+    color: var(--dark-gray);
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-gray);
+}
+
+/* Global Footer Adjustments */
+footer p {
+    color: var(--dark-gray);
+    font-weight: bold;
+}
+
+.socialmedia img {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--dark-gray);
+    background-color: var(--white);
+    padding: 4px;
+}
+
+/* Contact Us Grid Override */
+.contact-layout-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    border: #00000000;
+    display: block;
 }
 
 .employee-grid img {
@@ -457,84 +438,22 @@ footer p {
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid #777777;
     background-color: #cccccc;
     margin-bottom: 12px;
 }
 
-.employee-grid figcaption {
-    font-size: 0.95rem;
-    color: #333333;
-    line-height: 1.4;
-}
-
-/* ==========================================
-   9. HOME & TRIPS LAYOUT DESIGN MODES (HOME & TRIPS)
-   ========================================== */
-
-/* Home Layout CTA Banner Box rules */
-.cta-banner {
-    background-color: var(--light-gray);
-    border: 1px solid #777777;
-    padding: 25px;
-    text-align: center;
-    margin: 25px 16px;
-}
-
-.cta-banner h2 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-}
-
-.cta-banner p {
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.cta-link-btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: var(--white);
-    color: #333333;
-    border: 1px solid #777777;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.2s ease-in-out;
-}
-
-.cta-link-btn:hover {
-    background-color: var(--secondary-color);
+.contact-cta-banner {
+    background-color: var(--dark-navy);
     color: var(--white);
-    border-color: var(--secondary-color);
+    text-align: center;
+    padding: 25px;
 }
 
-/* Home Advanced Feature Grid layout configuration */
-.home-feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin: 20px 16px;
+.contact-cta-banner h2 {
+    color: var(--white);
 }
 
-.feature-card {
+.contact-cta-btn {
     background-color: var(--white);
-    border: 1px solid #777777;
-    padding: 15px;
-    text-align: left;
-}
-
-.feature-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border: 1px solid #777777;
-    margin-bottom: 12px;
-}
-
-.feature-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 4px;
+    margin-top: 15px;
 }

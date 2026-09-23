@@ -66,7 +66,7 @@ article {
 header {
     display: grid;
     grid-template-columns: 1fr auto;
-    /* Separates logo from navigation menu */
+    /* Separates the logo asset column from the navigation bar */
     align-items: center;
     background-color: var(--light-purple);
     padding: 25px;
@@ -88,7 +88,7 @@ header nav {
 header nav ul {
     list-style: none;
     display: flex;
-    /* Flexbox horizontal inline orientation */
+    /* Controls inline horizontal row formatting */
     gap: 10px;
 }
 
@@ -109,7 +109,7 @@ header nav a:hover {
 }
 
 /* ==========================================
-   4. HERO CONTAINER POSITIONING WITH OVERLAYS
+   4. HERO ARTICLE OVERLAYS (ABSOLUTE POSITIONING)
    ========================================== */
 .hero {
     position: relative;
@@ -163,6 +163,7 @@ header nav a:hover {
     background-color: #cccccc;
 }
 
+/* Clear alignment physics inside float containers */
 .hero article::after {
     content: "";
     display: table;
@@ -187,7 +188,7 @@ header nav a:hover {
 .history-container {
     display: grid;
     grid-template-columns: 1fr 200px 1fr;
-    /* Text, Image, Text */
+    /* Left text, center image, right text */
     align-items: start;
     gap: 20px;
 }
@@ -226,7 +227,7 @@ header nav a:hover {
 .adventure-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* 5 Uniform horizontal inline boxes */
+    /* Divides block horizontally into 5 identical columns */
     gap: 15px;
 }
 
@@ -284,7 +285,7 @@ footer p {
     height: 35px;
     display: block;
     border: 1px solid #333333;
-    /* Explicit boxed borders from wireframes */
+    /* Specific boxed borders from wireframes */
     background-color: var(--white);
     padding: 4px;
     transition: transform 0.2s ease-in-out;
@@ -295,7 +296,7 @@ footer p {
 }
 
 /* ==========================================
-   8. W05 CONTACT US WIREFRAME LAYOUT STYLES
+   8. CONTACT US WIREFRAME LAYOUT STYLES (CONTACT US)
    ========================================== */
 .company-heading {
     text-align: center;
@@ -323,6 +324,7 @@ footer p {
 
 .map-container {
     border: 1px solid #777777;
+    background-color: var(--light-gray);
 }
 
 .map-container iframe {
@@ -342,7 +344,7 @@ footer p {
 .form-item {
     display: grid;
     grid-template-columns: 80px 1fr;
-    /* Grid layout pairing input components with tracking fields */
+    /* Aligns input fields vertically */
     align-items: center;
 }
 
@@ -467,7 +469,7 @@ footer p {
 }
 
 /* ==========================================
-   9. W06 HOME & TRIPS LAYOUT DESIGN MODES
+   9. HOME & TRIPS LAYOUT DESIGN MODES (HOME & TRIPS)
    ========================================== */
 
 /* Home Layout CTA Banner Box rules */
@@ -536,6 +538,3 @@ footer p {
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 4px;
 }
-
-/* Home Interactive Newsletter Section container styling */
-.newsletter-section {

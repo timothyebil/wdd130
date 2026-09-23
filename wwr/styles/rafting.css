@@ -3,7 +3,7 @@
    ========================================== */
 :root {
     --primary-color: #0b5345;
-    /* Deep Teal Green - WCAG AA Compliant */
+    /* Deep Teal Green */
     --secondary-color: #d35400;
     /* Safety Orange Accent */
     --accent1-color: #1b263b;
@@ -33,7 +33,7 @@ body {
     background-color: var(--white);
 }
 
-/* Fixed layouts boundaries centered on desktop displays */
+/* Fixed layout margins centered on desktop displays */
 header,
 main,
 footer {
@@ -65,7 +65,7 @@ article {
 header {
     display: grid;
     grid-template-columns: 1fr auto;
-    /* Separates the logo image from navigation bars */
+    /* Separates the logo asset column from the navigation bar */
     align-items: center;
     background-color: var(--light-purple);
     padding: 25px;
@@ -87,7 +87,7 @@ header nav {
 header nav ul {
     list-style: none;
     display: flex;
-    /* Flexbox aligns lists horizontally inline */
+    /* Controls inline horizontal row formatting */
     gap: 10px;
 }
 
@@ -108,7 +108,7 @@ header nav a:hover {
 }
 
 /* ==========================================
-   4. HERO CONTAINER POSITIONING WITH OVERLAYS
+   4. HERO ARTICLE OVERLAYS (ABSOLUTE POSITIONING)
    ========================================== */
 .hero {
     position: relative;
@@ -153,7 +153,7 @@ header nav a:hover {
     float: left;
 }
 
-/* Right floating image inside absolute container */
+/* Right floating image inside absolute article card layout container */
 .hero article img {
     float: right;
     width: 13%;
@@ -162,6 +162,7 @@ header nav a:hover {
     background-color: #cccccc;
 }
 
+/* Clear alignment physics inside float containers */
 .hero article::after {
     content: "";
     display: table;
@@ -186,7 +187,7 @@ header nav a:hover {
 .history-container {
     display: grid;
     grid-template-columns: 1fr 200px 1fr;
-    /* Splitting: Text, Center Image, Text */
+    /* Left text column, center image box, right text column */
     align-items: start;
     gap: 20px;
 }
@@ -225,7 +226,7 @@ header nav a:hover {
 .adventure-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* 5 Column inline panels split */
+    /* Divides block horizontally into 5 identical columns */
     gap: 15px;
 }
 
@@ -254,7 +255,7 @@ header nav a:hover {
 }
 
 /* ==========================================
-   7. FOOTER WIREFRAME STYLING
+   7. FOOTER STYLING & GRID DISTRIBUTION
    ========================================== */
 footer {
     display: grid;
@@ -283,7 +284,7 @@ footer p {
     height: 35px;
     display: block;
     border: 1px solid #333333;
-    /* Renders the explicit cross-line boxes from wireframe */
+    /* Renders the explicit cross-line boxes shown in the wireframe */
     background-color: var(--white);
     padding: 4px;
     transition: transform 0.2s ease-in-out;
@@ -297,7 +298,7 @@ footer p {
    8. W05 CONTACT US WIREFRAME LAYOUT STYLES
    ========================================== */
 
-/* Company Header Text Group formatting */
+/* Company Header Alignment */
 .company-heading {
     text-align: center;
     margin: 20px 0;
@@ -323,7 +324,7 @@ footer p {
     margin: 20px 16px;
 }
 
-/* Map frame wrapper */
+/* Embedded Map Wrapper */
 .map-container {
     border: 1px solid #777777;
 }
@@ -336,7 +337,7 @@ footer p {
     border: none;
 }
 
-/* Form block arrangement properties */
+/* Form Container Arrangement Block */
 .form-container form {
     display: flex;
     flex-direction: column;
@@ -346,7 +347,7 @@ footer p {
 .form-item {
     display: grid;
     grid-template-columns: 80px 1fr;
-    /* Uniform text margins tracking lines */
+    /* Flush vertical row mapping */
     align-items: center;
 }
 
@@ -365,7 +366,7 @@ footer p {
     font-size: 1rem;
 }
 
-/* Radio Button Options Grid alignment */
+/* Radio Button Options Grid Alignments */
 .radio-group {
     border: none;
     margin: 5px 0;
@@ -384,7 +385,7 @@ footer p {
     gap: 10px;
     margin-bottom: 8px;
     padding-left: 80px;
-    /* Aligns options directly with inputs column line drop */
+    /* Synchronizes radio options with the inputs column */
 }
 
 .radio-option input[type="radio"] {
@@ -399,7 +400,7 @@ footer p {
     font-weight: normal;
 }
 
-/* Checkbox element alignment properties */
+/* Checkbox alignment formatting */
 .checkbox-option {
     display: flex;
     align-items: center;
@@ -415,7 +416,7 @@ footer p {
     cursor: pointer;
 }
 
-/* Custom Call-to-Action Submit button styling */
+/* Call-to-Action Submit Button Custom Style */
 .form-submit-btn {
     width: 100%;
     padding: 12px;
@@ -434,7 +435,7 @@ footer p {
     border-color: var(--secondary-color);
 }
 
-/* Employee bottom grid sections */
+/* Employee Recognition Grid Rules */
 .employee-section {
     border-top: 1px solid #777777;
     padding-top: 20px;
@@ -450,7 +451,7 @@ footer p {
 .employee-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 Profiles panel structures side by side */
+    /* 3 Profile Panels Side-by-Side */
     gap: 20px;
 }
 
@@ -465,7 +466,7 @@ footer p {
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    /* Uniform round profile rings per wireframe sketches */
+    /* Smooth wireframe avatar style shapes */
     border: 1px solid #777777;
     background-color: #cccccc;
     margin-bottom: 12px;

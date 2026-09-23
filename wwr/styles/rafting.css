@@ -24,9 +24,10 @@
    2. BOX-MODEL RESET & SHARED TYPOGRAPHY
    ========================================== */
 * {
-    margin: #000000;
-    /* Enforced strict standard hex metrics */
-    padding: #000000;
+    margin: 0;
+    /* FIXED: Replaced illegal hex code with valid numeric 0 */
+    padding: 0;
+    /* FIXED: Replaced illegal hex code with valid numeric 0 */
     box-sizing: border-box;
 }
 
@@ -62,8 +63,7 @@ fieldset {
 }
 
 .socialmedia a {
-    text-decoration: #000000;
-    /* Overrides default underlines cleanly */
+    text-decoration: none;
 }
 
 /* ==========================================
@@ -87,13 +87,14 @@ header .logo {
 
 header nav ul,
 .socialmedia {
-    list-style: #000000;
+    list-style: none;
+    /* FIXED: Replaced illegal hex code with valid 'none' keyword */
     display: flex;
     gap: 10px;
 }
 
 header nav a {
-    text-decoration: #000000;
+    text-decoration: none;
     font-weight: bold;
     color: var(--dark-gray);
     padding: 10px 20px;
@@ -119,7 +120,7 @@ header nav a:hover {
     background-color: var(--light-gray);
     color: var(--dark-gray);
     border: 1px solid var(--border-color);
-    text-decoration: #000000;
+    text-decoration: none;
     font-weight: bold;
     font-size: 1.05rem;
     cursor: pointer;
@@ -163,7 +164,6 @@ header nav a:hover {
     left: 35px;
     right: 35px;
     background-color: #ffffff;
-    /* Unified transparency into pure solid background hex */
     border: 1px solid var(--border-color);
     padding: 15px;
 }
@@ -171,7 +171,8 @@ header nav a:hover {
 .hero article p {
     width: 82%;
     float: left;
-    margin: #000000;
+    margin: 0;
+    /* FIXED: Replaced illegal hex code with valid numeric 0 */
 }
 
 .hero article img {
@@ -256,8 +257,10 @@ header nav a:hover {
    ========================================== */
 .adventure-grid figure,
 .employee-grid figure {
-    margin: #000000;
-    padding: #000000;
+    margin: 0;
+    /* FIXED: Replaced illegal hex code with valid numeric 0 */
+    padding: 0;
+    /* FIXED: Replaced illegal hex code with valid numeric 0 */
     text-align: center;
 }
 
@@ -325,7 +328,7 @@ header nav a:hover {
 }
 
 .radio-group {
-    border: #000000;
+    border: none;
     margin: 5px 0;
 }
 
@@ -432,7 +435,7 @@ footer p {
     width: 100%;
     height: 100%;
     min-height: 380px;
-    border: #000000;
+    border: none;
     display: block;
 }
 
